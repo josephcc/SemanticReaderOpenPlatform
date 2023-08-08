@@ -34,6 +34,11 @@ export default function Testimonials() {
             <ul role="list" className="divide-y divide-gray-100">
               <li className="flex justify-between gap-x-6 py-2">
                 <p className="text-s text-gray-600">
+                  <span style={{ fontWeight: 'bold' }}>ScholarPhi: Augmenting Scientific Papers with Just-in-Time, Position-Sensitive Definitions of Terms and Symbols</span>. Proceedings of the CHI Conference on Human Factors in Computing Systems. 2021. Andrew Head, Kyle Lo, Dongyeop Kang, Raymond Fok, Sam Skjonsberg, Daniel S. Weld and Marti A. Hearst.
+                </p>
+              </li>
+              <li className="flex justify-between gap-x-6 py-2">
+                <p className="text-s text-gray-600">
                   <span style={{fontWeight: 'bold'}}>CiteSee: Augmenting Citations in Scientific Papers with Persistent and Personalized Historical Context</span>. Proceedings of the CHI Conference on Human Factors in Computing Systems (<span style={{textDecoration: 'underline'}}>Best Paper Award</span>). 2023. Joseph Chee Chang, Amy X. Zhang, Jonathan Bragg, Andrew Head, Kyle Lo, Doug Downey and Daniel S. Weld.
                 </p>
               </li>
