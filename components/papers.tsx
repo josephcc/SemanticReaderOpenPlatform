@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import HeroBackground from '@/public/images/hero-background.jpg'
 
-export default function Testimonials() {
+export default function Papers() {
   return (
     <section className="relative">
 

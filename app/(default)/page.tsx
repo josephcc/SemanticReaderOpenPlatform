@@ -4,19 +4,19 @@ export const metadata = {
 }
 
 import Hero from '@/components/hero'
-import Features from '@/components/features'
-import FeaturesBlocks from '@/components/features-blocks'
-import Testimonials from '@/components/testimonials'
+import Libraries from '@/components/libraries'
+import Demos from '@/components/demos'
+import Papers from '@/components/papers'
 import Team from '@/components/team'
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Features />
-      <FeaturesBlocks />
-      <Testimonials />
+      <Libraries />
+      <Demos />
       <Team />
+      <Papers />
     </>
   )
 }

@@ -8,7 +8,7 @@ import Github from '@/public/images/github.svg'
 import ArXiv from '@/public/images/arxiv.svg'
 
 
-export default function Features() {
+export default function Libraries() {
   
   const [tab, setTab] = useState<number>(1)
 
