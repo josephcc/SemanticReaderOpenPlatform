@@ -39,7 +39,7 @@ export default function Papers() {
               </li>
               <li className="flex justify-between gap-x-6 py-2">
                 <p className="text-s text-gray-600">
-                  <span style={{fontWeight: 'bold'}}>CiteSee: Augmenting Citations in Scientific Papers with Persistent and Personalized Historical Context</span>. Proceedings of the CHI Conference on Human Factors in Computing Systems (<span style={{textDecoration: 'underline'}}>Best Paper Award</span>). 2023. Joseph Chee Chang, Amy X. Zhang, Jonathan Bragg, Andrew Head, Kyle Lo, Doug Downey and Daniel S. Weld.
+                  <span style={{ fontWeight: 'bold' }}>CiteSee: Augmenting Citations in Scientific Papers with Persistent and Personalized Historical Context</span>. Proceedings of the CHI Conference on Human Factors in Computing Systems. 2023. Joseph Chee Chang, Amy X. Zhang, Jonathan Bragg, Andrew Head, Kyle Lo, Doug Downey and Daniel S. Weld.  <span style={{ fontWeight: 'bold' }}>🏆 Best Paper Award</span>
                 </p>
               </li>
               <li className="flex justify-between gap-x-6 py-2">
