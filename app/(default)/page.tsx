@@ -13,9 +13,13 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <div id='libraries' style={{position: 'relative', top: '-60px'}}/>
       <Libraries />
+      <div id='demos' style={{position: 'relative', top: '-60px'}}/>
       <Demos />
+      <div id='team' style={{position: 'relative', top: '-60px'}}/>
       <Team />
+      <div id='publications' style={{position: 'relative', top: '-60px'}}/>
       <Papers />
     </>
   )
