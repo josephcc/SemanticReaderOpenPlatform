@@ -30,8 +30,8 @@ export default function FeaturesBlocks() {
                   </g>
                 </g>
               </svg>
-              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">PDF Document QA</h4>
-              <p className="text-gray-600 text-center mb-2">A LLM-powered document QA system with and attribution support.</p>
+              <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">LLM Document QA</h4>
+              <p className="text-gray-600 text-center mb-2">A GPT-powered PDF QA system with attribution support.</p>
               <p className="text-gray-600 text-center">
                 <span className="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10 mr-1">Interactive Demo</span>
                 <span className="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20 mr-1">Code Snippet</span>
@@ -113,7 +113,7 @@ export default function FeaturesBlocks() {
                 </g>
               </svg>
               <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">ScholarPhi</h4>
-              <p className="text-gray-600 text-center mb-2">Augmenting Scientific Papers with Just-in-Time, Position-Sensitive Definitions of Terms and Symbols</p>
+              <p className="text-gray-600 text-center mb-2">Augmenting Papers with Just-in-Time Definitions of Terms and Symbols</p>
               <p className="text-gray-600 text-center" style={{ margin: '0 -10px' }}>
                 <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 mr-1">Demo Video</span>
                 <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">Research Paper</span>
