@@ -12,7 +12,7 @@ export default function Demos() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-4 md:pb-9">
             <h2 className="h2 mb-4">Research Prototype Showcase</h2>
-            <p className="text-xl text-gray-600">Here we present several interactive demos to showcase systems you can built with PaperMage and ComponentLibrary.</p>
+            <p className="text-xl text-gray-600">Here we present several interactive demos to showcase systems you can build with PaperMage and the ComponentLibrary.</p>
           </div>
 
           {/* Items */}
@@ -97,6 +97,7 @@ export default function Demos() {
               <p className="text-gray-600 text-center mb-2">Augmenting Citations in Papers with Persistent and Personalized Context</p>
               <p className="text-gray-600 text-center">
                 <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 mr-1">Demo Video</span>
+                <span className="inline-flex items-center rounded-md bg-purple-50 px-2 py-1 text-xs font-medium text-purple-700 ring-1 ring-inset ring-purple-700/10 mr-1">Product Feature</span>
                 <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">Research Paper</span>
               </p>
             </div>
