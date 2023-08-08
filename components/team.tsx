@@ -6,6 +6,7 @@ import S2 from '@/public/images/institutes/s2.svg'
 import UW from '@/public/images/institutes/uw.png'
 import Berkeley from '@/public/images/institutes/berkeley.png'
 import UPenn from '@/public/images/institutes/upenn.png'
+import MIT from '@/public/images/institutes/mit.png'
 
 export default function Team() {
   return (
@@ -16,12 +17,20 @@ export default function Team() {
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="h2 mb-4">Core Team</h2>
+            <h2 className="h2 mb-4">Core Platform Team</h2>
             <p className="text-xl text-gray-600">See the&nbsp;
             <Link href="#publications" aria-label="Publications">
-                <span style={{textDecoration: 'underline'}}>project overview paper</span>
+                <span style={{textDecoration: 'underline'}}>Semantic Reader Project Overview Paper</span>
             </Link>
-            &nbsp;below to see a full list of contributors.</p>
+            &nbsp;below to see a full list of contributors of the larger Project.</p>
+          </div>
+        </div>
+        <div>
+          <div className="max-w-3xl mx-auto text-center mb-20">
+            <p className="text-xl text-gray-600">
+              Platform people or everybody?
+              {/* Kyle Lo, Joseph Chee Chang, Andrew Head, Luca, Shannon, Tyler, Chloe, Doug Downey, Chris Wilhelm, Marti A. Hearst and Daniel S. Weld. */}
+            </p>
           </div>
         </div>
 
@@ -33,10 +42,10 @@ export default function Team() {
                 <Image src={AI2} alt="AI2 Logo" height="40" />
             </div>
 
-            {/* Item */}
+            {/* Item
             <div className="flex items-center justify-center py-2 col-span-2 md:col-auto">
                 <Image src={S2} alt="S2 Logo" height="40" />
-            </div>
+            </div> */}
 
             {/* Item */}
             <div className="flex items-center justify-center py-2 col-span-2 md:col-auto">
@@ -51,6 +60,11 @@ export default function Team() {
             {/* Item */}
             <div className="flex items-center justify-center py-2 col-span-2 md:col-auto col-start-2 col-end-4">
                 <Image src={UPenn} alt="UPenn Logo" height="40" />
+            </div>
+
+            {/* Item */}
+            <div className="flex items-center justify-center py-2 col-span-2 md:col-auto col-start-2 col-end-4 opacity-70">
+                <Image src={MIT} alt="MITLogo" height="34" />
             </div>
 
           </div>
