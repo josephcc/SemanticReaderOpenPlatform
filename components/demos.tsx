@@ -54,7 +54,7 @@ export default function Demos() {
               <p className="text-gray-600 text-center mb-2">Automatic highlights for skimming support of scientific papers</p>
               <p className="text-gray-600 text-center" style={{ margin: '0 -10px' }}>
                 <span className="inline-flex items-center rounded-md bg-purple-50 px-2 py-1 text-xs font-medium text-purple-700 ring-1 ring-inset ring-purple-700/10 mr-1">Product Feature</span>
-                <span className="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20">Code Snippet</span>
+                <span className="inline-flex items-center rounded-md bg-yellow-50 px-2 py-1 text-xs font-medium text-yellow-800 ring-1 ring-inset ring-yellow-600/20 mr-1">Code Snippet</span>
                 <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">Research Paper</span>
               </p>
             </div>
@@ -75,6 +75,7 @@ export default function Demos() {
               <p className="text-gray-600 text-center mb-2">Augmenting Research Papers with Author Talk Videos</p>
               <p className="text-gray-600 text-center" style={{ margin: '0 -10px' }}>
                 <span className="inline-flex items-center rounded-md bg-blue-50 px-2 py-1 text-xs font-medium text-blue-700 ring-1 ring-inset ring-blue-700/10 mr-1">Interactive Demo</span>
+                <span className="inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10 mr-1">Open Sourced</span>
                 <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">Research Paper</span>
               </p>
             </div>
@@ -116,6 +117,7 @@ export default function Demos() {
               <p className="text-gray-600 text-center mb-2">Augmenting Papers with Just-in-Time Definitions of Terms and Symbols</p>
               <p className="text-gray-600 text-center" style={{ margin: '0 -10px' }}>
                 <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 mr-1">Demo Video</span>
+                <span className="inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10 mr-1">Open Sourced</span>
                 <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">Research Paper</span>
               </p>
             </div>
