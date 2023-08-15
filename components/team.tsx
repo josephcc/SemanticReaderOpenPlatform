@@ -17,7 +17,7 @@ export default function Team() {
 
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="h2 mb-4">Core Platform Team</h2>
+            <h2 className="h2 mb-4">Core Team</h2>
             <p className="text-xl text-gray-600">See the&nbsp;
             <Link href="#publications" aria-label="Publications">
                 <span style={{textDecoration: 'underline'}}>Semantic Reader Project Overview Paper</span>
@@ -28,7 +28,7 @@ export default function Team() {
         <div>
           <div className="max-w-3xl mx-auto text-center mb-20">
             <p className="text-xl text-gray-600">
-              Platform people or everybody?
+              put everybody here?
               {/* Kyle Lo, Joseph Chee Chang, Andrew Head, Luca, Shannon, Tyler, Chloe, Doug Downey, Chris Wilhelm, Marti A. Hearst and Daniel S. Weld. */}
             </p>
           </div>
