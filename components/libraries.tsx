@@ -72,7 +72,7 @@ export default function Libraries() {
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
                     <Image src={ArXiv} alt="arXiv Logo" style={{ height: '22px !important', width: 'auto' }} />
                   </div>
-                  <div className="font-bold tracking-tight" style={{marginLeft: '16px'}}>Read the Paper</div>
+                  <div className="font-bold tracking-tight" style={{marginLeft: '16px'}}>Read the PapgerMage Paper</div>
                 </a>
               </div>
             </div>
@@ -98,6 +98,16 @@ export default function Libraries() {
                     <Image src={Github} alt="Github Logo" style={{ height: '32px !important', width: 'auto' }} />
                   </div>
                   <div className="font-bold tracking-tight" style={{marginLeft: '16px'}}>Check Out the Source Code</div>
+                </a>
+                <a
+                  className='flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
+                  href="https://github.com/allenai/papermage"
+                  target='_blank' rel='noreferrer'
+                >
+                  <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
+                    <Image src={ArXiv} alt="arXiv Logo" style={{ height: '22px !important', width: 'auto' }} />
+                  </div>
+                  <div className="font-bold tracking-tight" style={{marginLeft: '16px'}}>Read the Tutorial Blogpost</div>
                 </a>
               </div>
             </div>
