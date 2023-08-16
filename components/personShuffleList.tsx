@@ -1,7 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Person, { PersonType } from './person';
+
+
 
 function shuffle(array: any[]) {
   let currentIndex = array.length, randomIndex;
@@ -24,9 +26,15 @@ function shuffle(array: any[]) {
 
 export default function PersonShuffleList({people}: {people: PersonType[]}) {
   const [shuffled, _] = useState(shuffle(people))
+  const [isClient, setIsClient] = useState(false)
+ 
+  useEffect(() => {
+    setIsClient(true)
+  }, [])
+
   return (
     <>
-      {shuffled.map(person => (
+      {isClient && shuffled.map(person => (
         <div className="relative flex flex-col items-center p-6" key={person.name}>
           <Person {...person} />
         </div>

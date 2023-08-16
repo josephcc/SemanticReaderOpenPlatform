@@ -45,7 +45,7 @@ export default function Libraries() {
             <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6 md:mt-6" data-aos="fade-right">
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8">
                 <h3 className="h3 mb-3" style={{display: 'flex'}}>
-                  <Image src={PaperMage} alt="PaperMage Logo"  style={{height: '40px !important', width: 'auto', marginRight: '8px'}}/>
+                  <Image src={PaperMage} alt="PaperMage Logo" style={{ height: '40px !important', width: 'auto', marginRight: '8px' }} height='40' />
                   PaperMage
                 </h3>
                 <p className="text-xl text-gray-600">
