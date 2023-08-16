@@ -64,15 +64,15 @@ export default function Team() {
         </div>
 
         <div>
-          <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Libraries and Tooling</h4>
+          <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Research Libraries and Tooling</h4>
           <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-4 items-start md:max-w-2xl lg:max-w-none">
             <PersonShuffleList people={PlatformPeople} />
           </div>
-          <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Intelligent Reading Interfaces</h4>
+          <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Intelligent Reading Interfaces Research</h4>
           <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
             <PersonShuffleList people={InterfacePeople} />
           </div>
-          <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Advisory Board</h4>
+          <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Research Advisory Board</h4>
           <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
             <PersonShuffleList people={AdvisorPeople} />
           </div>
