@@ -21,6 +21,9 @@ export interface PaperType {
   authors: AuthorType[]
   externalIds: {CorpusId: number}
   citationCount: number
+  journal: {
+    name: string
+  }
 }
 
 const overviewId = [257766269]
@@ -29,7 +32,7 @@ const resourceIds = [256194545, 215416146, 216867622, 215768677, 222291111, 2457
 
 export async function fetchPapers(ids: number[]) {
   const key = process.env.S2_PARTNER_KEY || ''
-  const response = await fetch('https://partner.semanticscholar.org/graph/v1/paper/batch?fields=title,authors,venue,publicationVenue,year,externalIds,citationCount', {
+  const response = await fetch('https://partner.semanticscholar.org/graph/v1/paper/batch?fields=title,authors,venue,publicationVenue,year,externalIds,citationCount,journal', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
