@@ -8,6 +8,7 @@ import Berkeley from '@/public/images/institutes/berkeley.png'
 import UPenn from '@/public/images/institutes/upenn.png'
 import MIT from '@/public/images/institutes/mit.png'
 import Person, { PersonType } from './person'
+import { useState } from 'react'
 
 function shuffle(array: any[]) {
   let currentIndex = array.length, randomIndex;
@@ -28,6 +29,7 @@ function shuffle(array: any[]) {
 }
 
 export default function Team() {
+  const [platformPeople, _] = useState(shuffle(PlatformPeople))
   return (
     <section className="relative" style={{ background: '#f2f2f2' }}>
 
