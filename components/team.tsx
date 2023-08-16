@@ -8,28 +8,9 @@ import Berkeley from '@/public/images/institutes/berkeley.png'
 import UPenn from '@/public/images/institutes/upenn.png'
 import MIT from '@/public/images/institutes/mit.png'
 import Person, { PersonType } from './person'
-import { useState } from 'react'
-
-function shuffle(array: any[]) {
-  let currentIndex = array.length, randomIndex;
-
-  // While there remain elements to shuffle.
-  while (currentIndex != 0) {
-
-    // Pick a remaining element.
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    // And swap it with the current element.
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
-  }
-
-  return array;
-}
+import PersonShuffleList from './personShuffleList'
 
 export default function Team() {
-  const [platformPeople, _] = useState(shuffle(PlatformPeople))
   return (
     <section className="relative" style={{ background: '#f2f2f2' }}>
 
@@ -85,27 +66,15 @@ export default function Team() {
         <div>
           <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Libraries and Tooling</h4>
           <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-4 items-start md:max-w-2xl lg:max-w-none">
-            {platformPeople.map(person => (
-              <div className="relative flex flex-col items-center p-6" key={person.name}>
-                <Person {...person} />
-              </div>
-            ))}
+            <PersonShuffleList people={PlatformPeople} />
           </div>
           <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Intelligent Reading Interfaces</h4>
           <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
-            {shuffle(InterfacePeople).map(person => (
-              <div className="relative flex flex-col items-center p-6" key={person.name}>
-                <Person {...person} />
-              </div>
-            ))}
+            <PersonShuffleList people={InterfacePeople} />
           </div>
           <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Advisory Board</h4>
           <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
-            {shuffle(AdvisorPeople).map(person => (
-              <div className="relative flex flex-col items-center p-6" key={person.name}>
-                <Person {...person} />
-              </div>
-            ))}
+            <PersonShuffleList people={AdvisorPeople} />
           </div>
         </div>
 
