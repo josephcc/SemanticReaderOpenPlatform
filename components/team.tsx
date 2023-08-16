@@ -85,7 +85,7 @@ export default function Team() {
         <div>
           <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Libraries and Tooling</h4>
           <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-4 items-start md:max-w-2xl lg:max-w-none">
-            {shuffle(PlatformPeople).map(person => (
+            {platformPeople.map(person => (
               <div className="relative flex flex-col items-center p-6" key={person.name}>
                 <Person {...person} />
               </div>
