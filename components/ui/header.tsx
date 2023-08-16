@@ -10,18 +10,18 @@ import SemanticReader from '@/public/images/semantic_reader.svg'
 
 export default function Header() {
 
-  const [top, setTop] = useState<boolean>(true)
+  const [top, setTop] = useState<boolean>(false)
 
-  // detect whether user has scrolled the page down by 10px
-  const scrollHandler = () => {
-    window.pageYOffset > 10 ? setTop(false) : setTop(true)
-  }  
+  // // detect whether user has scrolled the page down by 10px
+  // const scrollHandler = () => {
+  //   window.pageYOffset > 10 ? setTop(false) : setTop(true)
+  // }  
 
-  useEffect(() => {
-    scrollHandler()
-    window.addEventListener('scroll', scrollHandler)
-    return () => window.removeEventListener('scroll', scrollHandler)
-  }, [top])
+  // useEffect(() => {
+  //   scrollHandler()
+  //   window.addEventListener('scroll', scrollHandler)
+  //   return () => window.removeEventListener('scroll', scrollHandler)
+  // }, [top])
 
   return (
     <header className={`fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out ${!top ? 'bg-white backdrop-blur-sm shadow-lg' : ''}`}>
