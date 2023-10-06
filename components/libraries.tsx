@@ -43,7 +43,7 @@ export default function Libraries() {
 
             {/* Content */}
             <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6 md:mt-6" data-aos="fade-right">
-              <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8">
+              <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
                 <h3 className="h3 mb-3" style={{display: 'flex'}}>
                   <Image src={PaperMage} alt="PaperMage Logo" style={{ height: '40px !important', width: 'auto', marginRight: '8px' }} height='40' />
                   PaperMage
@@ -53,32 +53,33 @@ export default function Libraries() {
                 </p>
               </div>
               {/* Tabs buttons */}
-              <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8">
+              <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8" style={{display: 'flex'}}>
                 <a
                   className='flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
-                  href="https://github.com/allenai/papermage"
+                  href="https://github.com/allenai/papermage" style={{marginRight: '8px', flexGrow: 1 }}
                   target='_blank' rel='noreferrer'
                 >
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
                     <Image src={Github} alt="Github Logo" style={{ height: '32px !important', width: 'auto' }} />
                   </div>
-                  <div className="font-bold tracking-tight" style={{marginLeft: '16px'}}>Check Out the Source Code</div>
+                  <div className="font-bold tracking-tight" style={{marginLeft: '16px'}}>Source Code</div>
                 </a>
                 <a
                   className='flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
                   href="https://github.com/allenai/papermage"
+                  style={{ flexGrow: 1 }}
                   target='_blank' rel='noreferrer'
                 >
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
                     <Image src={ArXiv} alt="arXiv Logo" style={{ height: '22px !important', width: 'auto' }} />
                   </div>
-                  <div className="font-bold tracking-tight" style={{marginLeft: '16px'}}>Read the PapgerMage Paper</div>
+                  <div className="font-bold tracking-tight" style={{marginLeft: '16px'}}>Read the Paper</div>
                 </a>
               </div>
             </div>
 
             <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6 md:mt-6" data-aos="fade-right">
-              <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8">
+              <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
                 <h3 className="h3 mb-3" style={{ display: 'flex', alignItems: 'center' }}>
                   <Image src={ComponentLibray} alt="ComponentLibrary Logo"  style={{height: '32px', width: 'auto', marginRight: '8px'}}/>
                   ComponentLibrary
@@ -88,26 +89,27 @@ export default function Libraries() {
                 </p>
               </div>
               {/* Tabs buttons */}
-              <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8">
+              <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8" style={{display: 'flex'}}>
                 <a
-                  className='flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
+                  className='flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600' style={{marginRight: '8px', flexGrow: 1 }}
                   href="https://github.com/allenai/pdf-component-library"
                   target='_blank' rel='noreferrer'
                 >
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
                     <Image src={Github} alt="Github Logo" style={{ height: '32px !important', width: 'auto' }} />
                   </div>
-                  <div className="font-bold tracking-tight" style={{marginLeft: '16px'}}>Check Out the Source Code</div>
+                  <div className="font-bold tracking-tight" style={{marginLeft: '16px'}}>Source Code</div>
                 </a>
                 <a
                   className='flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
                   href="https://github.com/allenai/papermage"
+                  style={{ flexGrow: 1 }}
                   target='_blank' rel='noreferrer'
                 >
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
                     <Image src={ArXiv} alt="arXiv Logo" style={{ height: '22px !important', width: 'auto' }} />
                   </div>
-                  <div className="font-bold tracking-tight" style={{marginLeft: '16px'}}>Read the Tutorial Blogpost</div>
+                  <div className="font-bold tracking-tight" style={{marginLeft: '16px'}}>Read the Tutorial</div>
                 </a>
               </div>
             </div>
