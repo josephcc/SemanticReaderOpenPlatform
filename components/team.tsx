@@ -87,7 +87,7 @@ export default function Team() {
 const PlatformPeople: PersonType[] = [
   {
     name: 'Joseph C. Chang',
-    image: 'https://assets-global.website-files.com/605ba9b55a4a92803e45a32b/622298160cf254a5f4a2a762_joseph-chang.jpeg',
+    image: '/images/people/joseph.jpg',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
     website: 'https://joe.cat',
     twitter: 'https://twitter.com/josephcc',
@@ -140,6 +140,7 @@ const PlatformPeople: PersonType[] = [
     name: 'Tal August',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
     title: 'Young Investigator',
+    image: '/images/people/tal.jpg',
     website: 'https://joe.cat',
     twitter: 'https://twitter.com/josephcc'
   },
@@ -179,6 +180,7 @@ const InterfacePeople: PersonType[] = [
     name: 'Tal August',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
     title: 'Young Investigator',
+    image: '/images/people/tal.jpg',
     website: 'https://joe.cat',
     twitter: 'https://twitter.com/josephcc'
   },
