@@ -30,8 +30,12 @@ export default function Demos() {
 
             <Demo title="Papeos" subtitle="Augmenting Research Papers with Author Talk Videos" pillTypes={[PillType.DEMO, PillType.SOURCE, PillType.PAPER]} />
 
+            <Demo title="CiteSee" subtitle="Augmenting Citations in Papers with Persistent and Personalized Context" pillTypes={[PillType.VIDEO, PillType.PRODUCT, PillType.PAPER]}
+              people={[
+                { name: 'Joseph Chee Chang', image: '/images/people/joseph.jpg' },
+              ]}
 
-            <Demo title="CiteSee" subtitle="Augmenting Citations in Papers with Persistent and Personalized Context" pillTypes={[PillType.VIDEO, PillType.PRODUCT, PillType.PAPER]} />
+            />
 
             <Demo title="Scim" subtitle="Automatic highlights for skimming support of scientific papers" pillTypes={[PillType.PRODUCT, PillType.SNIPPET, PillType.PAPER]} />
 
