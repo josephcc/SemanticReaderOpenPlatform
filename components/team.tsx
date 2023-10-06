@@ -119,16 +119,19 @@ const PlatformPeople: PersonType[] = [
     name: 'Smita Rao',
     title: 'Engineering Manager',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
+    website: 'https://www.linkedin.com/in/smita-rao-b5609448/'
   },
   {
     name: 'Tyler Murray',
     title: 'Software Engineer',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
+    website:'https://www.linkedin.com/in/tcmurray/'
   },
   {
     name: 'Chloe Anastasiades',
     title: 'Software Engineer',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
+    website: 'https://www.linkedin.com/in/chloe-anastasiades/'
   },
   {
     name: 'Tal August',
@@ -203,7 +206,7 @@ const AdvisorPeople: PersonType[] = [
     name: 'Marti A. Hearst',
     image: '/images/people/marti.jpg',
     affiliation: 'University of California, Berkeley',
-    title: 'Professor',
+    title: 'Professor and Interim Dean',
     website: 'https://people.ischool.berkeley.edu/~hearst/',
   },
   {
