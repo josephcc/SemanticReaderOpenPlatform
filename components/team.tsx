@@ -77,8 +77,6 @@ export default function Team() {
             <PersonShuffleList people={AdvisorPeople} />
           </div>
         </div>
-
-
       </div>
     </section>
   )
@@ -97,8 +95,8 @@ const PlatformPeople: PersonType[] = [
     name: 'Kyle Lo',
     image: '/images/people/kyle.jpg',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
-    website: 'https://joe.cat',
-    twitter: 'https://twitter.com/josephcc',
+    website: 'https://kyleclo.github.io/',
+    twitter: 'https://twitter.com/kylelostat',
     title: 'Research Scientist'
   },
   {
@@ -106,45 +104,39 @@ const PlatformPeople: PersonType[] = [
     title: 'Research Scientist',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
     image: '/images/people/luca.jpg',
-    website: 'https://joe.cat',
-    twitter: 'https://twitter.com/josephcc'
+    website: 'https://soldaini.net/',
+    twitter: 'https://twitter.com/soldni'
   },
   {
     name: 'Shannon Shen',
     image: '/images/people/shannon.jpg',
     affiliation: 'Massachusetts Institute of Technology',
     title: 'Doctoral Student',
-    website: 'https://joe.cat',
-    twitter: 'https://twitter.com/josephcc'
+    website: 'https://www.szj.io/',
+    twitter: 'https://twitter.com/shannonzshen'
   },
   {
     name: 'Smita Rao',
     title: 'Engineering Manager',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
-    website: 'https://joe.cat',
-    twitter: 'https://twitter.com/josephcc'
   },
   {
     name: 'Tyler Murray',
     title: 'Software Engineer',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
-    website: 'https://joe.cat',
-    twitter: 'https://twitter.com/josephcc'
   },
   {
     name: 'Chloe Anastasiades',
     title: 'Software Engineer',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
-    website: 'https://joe.cat',
-    twitter: 'https://twitter.com/josephcc'
   },
   {
     name: 'Tal August',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
     title: 'Young Investigator',
     image: '/images/people/tal.jpg',
-    website: 'https://joe.cat',
-    twitter: 'https://twitter.com/josephcc'
+    website: 'https://talaugust.github.io/',
+    twitter: 'https://twitter.com/tal_august'
   },
 ]
 
@@ -162,39 +154,39 @@ const InterfacePeople: PersonType[] = [
     title: 'Research Scientist',
     image: '/images/people/jonathan.jpg',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
-    website: 'https://joe.cat',
-    twitter: 'https://twitter.com/josephcc'
+    website: 'https://www.jonathanbragg.com/',
+    twitter: 'https://twitter.com/turingmusician'
   },
   {
     name: 'Andrew Head',
     image: '/images/people/andrew.jpg',
     affiliation: 'UPenn',
     title: 'Assistant Professor',
-    website: 'https://joe.cat',
-    twitter: 'https://twitter.com/josephcc'
+    website: 'https://andrewhead.info/',
+    twitter: 'https://twitter.com/drewmikehead'
   },
   {
     name: 'Amy X. Zhang',
     image: '/images/people/amy.jpg',
     affiliation: 'University of Washington',
     title: 'Assistant Professor',
-    website: 'https://joe.cat',
-    twitter: 'https://twitter.com/josephcc'
+    website: 'https://homes.cs.washington.edu/~axz/',
+    twitter: 'https://twitter.com/amyxzh'
   },
   {
     name: 'Tal August',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
     title: 'Young Investigator',
     image: '/images/people/tal.jpg',
-    website: 'https://joe.cat',
-    twitter: 'https://twitter.com/josephcc'
+    website: 'https://talaugust.github.io/',
+    twitter: 'https://twitter.com/tal_august'
   },
   {
     name: 'Cassidy Trier',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
     title: 'Product Designer',
     website: 'https://www.cassidytrier.com/',
-    twitter: 'https://twitter.com/josephcc'
+    twitter: 'https://twitter.com/TrierCassidy'
   },
 ]
 
@@ -204,8 +196,8 @@ const AdvisorPeople: PersonType[] = [
     affiliation: 'Allen Institute for AI, Semantic Scholar',
     image: '/images/people/doug.jpg',
     title: 'Senior Director',
-    website: 'https://joe.cat',
-    twitter: 'https://twitter.com/josephcc'
+    website: 'https://users.cs.northwestern.edu/~ddowney/',
+    twitter: 'https://twitter.com/_DougDowney'
   },
   {
     name: 'Marti A. Hearst',
@@ -219,7 +211,7 @@ const AdvisorPeople: PersonType[] = [
     affiliation: 'Allen Institute for AI, Semantic Scholar',
     image: '/images/people/dan.jpg',
     title: 'Chief Scientist',
-    website: 'https://joe.cat',
-    twitter: 'https://twitter.com/josephcc'
+    website: 'https://www.cs.washington.edu/people/faculty/weld',
+    twitter: 'https://twitter.com/dsweld'
   },
 ]
