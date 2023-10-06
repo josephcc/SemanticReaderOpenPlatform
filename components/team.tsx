@@ -86,7 +86,7 @@ export default function Team() {
 
 const PlatformPeople: PersonType[] = [
   {
-    name: 'Joseph C. Chang',
+    name: 'Joseph Chee Chang',
     image: '/images/people/joseph.jpg',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
     website: 'https://joe.cat',
@@ -95,6 +95,7 @@ const PlatformPeople: PersonType[] = [
   },
   {
     name: 'Kyle Lo',
+    image: '/images/people/kyle.jpg',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
     website: 'https://joe.cat',
     twitter: 'https://twitter.com/josephcc',
@@ -110,6 +111,7 @@ const PlatformPeople: PersonType[] = [
   },
   {
     name: 'Shannon Shen',
+    image: '/images/people/shannon.jpg',
     affiliation: 'Massachusetts Institute of Technology',
     title: 'Doctoral Student',
     website: 'https://joe.cat',
@@ -148,8 +150,8 @@ const PlatformPeople: PersonType[] = [
 
 const InterfacePeople: PersonType[] = [
   {
-    name: 'Joseph C. Chang',
-    image: 'https://assets-global.website-files.com/605ba9b55a4a92803e45a32b/622298160cf254a5f4a2a762_joseph-chang.jpeg',
+    name: 'Joseph Chee Chang',
+    image: '/images/people/joseph.jpg',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
     website: 'https://joe.cat',
     twitter: 'https://twitter.com/josephcc',
@@ -158,12 +160,14 @@ const InterfacePeople: PersonType[] = [
   {
     name: 'Jonathan Bragg',
     title: 'Research Scientist',
+    image: '/images/people/jonathan.jpg',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
     website: 'https://joe.cat',
     twitter: 'https://twitter.com/josephcc'
   },
   {
     name: 'Andrew Head',
+    image: '/images/people/andrew.jpg',
     affiliation: 'UPenn',
     title: 'Assistant Professor',
     website: 'https://joe.cat',
@@ -171,6 +175,7 @@ const InterfacePeople: PersonType[] = [
   },
   {
     name: 'Amy X. Zhang',
+    image: '/images/people/amy.jpg',
     affiliation: 'University of Washington',
     title: 'Assistant Professor',
     website: 'https://joe.cat',
@@ -197,12 +202,14 @@ const AdvisorPeople: PersonType[] = [
   {
     name: 'Doug Downey',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
+    image: '/images/people/doug.jpg',
     title: 'Senior Director',
     website: 'https://joe.cat',
     twitter: 'https://twitter.com/josephcc'
   },
   {
     name: 'Marti A. Hearst',
+    image: '/images/people/marti.jpg',
     affiliation: 'University of California, Berkeley',
     title: 'Professor',
     website: 'https://people.ischool.berkeley.edu/~hearst/',
@@ -210,6 +217,7 @@ const AdvisorPeople: PersonType[] = [
   {
     name: 'Dan Weld',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
+    image: '/images/people/dan.jpg',
     title: 'Chief Scientist',
     website: 'https://joe.cat',
     twitter: 'https://twitter.com/josephcc'

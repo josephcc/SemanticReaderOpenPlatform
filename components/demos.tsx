@@ -37,10 +37,9 @@ export default function Demos() {
 
             />
 
-            <Demo title="Scim" subtitle="Automatic highlights for skimming support of scientific papers" pillTypes={[PillType.PRODUCT, PillType.SNIPPET, PillType.PAPER]} />
+            <Demo title="Scim" subtitle="Automatic highlights for skimming support of scientific papers" pillTypes={[PillType.PRODUCT, PillType.SNIPPET, PillType.PAPER]} people={[{name: 'Raymond Fok', image: '/images/people/ray.jpg'}]}/>
 
-            <Demo title="ScholarPhi" subtitle="Augmenting Papers with Just-in-Time Definitions of Terms and Symbols" pillTypes={[PillType.SOURCE, PillType.VIDEO, PillType.PAPER]} />
-
+            <Demo title="ScholarPhi" subtitle="Augmenting Papers with Just-in-Time Definitions of Terms and Symbols" pillTypes={[PillType.SOURCE, PillType.VIDEO, PillType.PAPER]} people={[{name: 'Andrew Head', image: '/images/people/andrew.jpg'}, {name: 'Kyle Lo', image: '/images/people/kyle.jpg'}]}/>
 
 
           </div>
