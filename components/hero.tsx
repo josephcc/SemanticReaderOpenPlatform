@@ -47,7 +47,7 @@ export default function Hero() {
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
                     <Image src={SemanticReader} alt="arXiv Logo" style={{ height: '22px !important', width: 'auto' }} />
                   </div>
-                  <div className="font-bold tracking-tight" style={{margin: '0 16px'}}>Trythe Semantic Reader</div>
+                  <div className="font-bold tracking-tight" style={{margin: '0 16px'}}>Try Semantic Reader</div>
                 </a>
 
             </div>

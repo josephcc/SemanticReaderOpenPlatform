@@ -2,12 +2,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import AI2 from '@/public/images/institutes/ai2.png'
-import S2 from '@/public/images/institutes/s2.svg'
 import UW from '@/public/images/institutes/uw.png'
 import Berkeley from '@/public/images/institutes/berkeley.png'
 import UPenn from '@/public/images/institutes/upenn.png'
 import MIT from '@/public/images/institutes/mit.png'
-import Person, { PersonType } from './person'
+import UIUC from '@/public/images/institutes/uiuc.png'
+import { PersonType } from './person'
 import PersonShuffleList from './personShuffleList'
 
 export default function Team() {
@@ -29,10 +29,10 @@ export default function Team() {
         </div>
 
         {/* Items */}
-        <div className="max-w-sm md:max-w-4xl mx-auto grid gap-2 grid-cols-4 md:grid-cols-5 pb-8">
+        <div className="max-w-sm md:max-w-4xl mx-auto pb-8" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
 
           {/* Item */}
-          <div className="flex items-center justify-center py-2 col-span-2 md:col-auto">
+          <div className="flex items-center justify-center py-2">
             <Image src={AI2} alt="AI2 Logo" height="40" />
           </div>
 
@@ -42,23 +42,27 @@ export default function Team() {
             </div> */}
 
           {/* Item */}
-          <div className="flex items-center justify-center py-2 col-span-2 md:col-auto">
+          <div className="flex items-center justify-center py-2">
             <Image src={UW} alt="UW Logo" height="40" />
           </div>
 
           {/* Item */}
-          <div className="flex items-center justify-center py-2 col-span-2 md:col-auto col-start-2 col-end-4">
+          <div className="flex items-center justify-center py-2">
             <Image src={Berkeley} alt="UCB Logo" height="40" />
           </div>
 
           {/* Item */}
-          <div className="flex items-center justify-center py-2 col-span-2 md:col-auto col-start-2 col-end-4">
+          <div className="flex items-center justify-center py-2">
             <Image src={UPenn} alt="UPenn Logo" height="40" />
           </div>
 
           {/* Item */}
-          <div className="flex items-center justify-center py-2 col-span-2 md:col-auto col-start-2 col-end-4 opacity-70">
-            <Image src={MIT} alt="MITLogo" height="34" />
+          <div className="flex items-center justify-center py-2">
+            <Image src={MIT} alt="MIT Logo" height="34" />
+          </div>
+
+          <div className="flex items-center justify-center py-2">
+            <Image src={UIUC} alt="UIUC Logo" height="34" />
           </div>
 
         </div>
@@ -135,8 +139,8 @@ const PlatformPeople: PersonType[] = [
   },
   {
     name: 'Tal August',
-    affiliation: 'Allen Institute for AI, Semantic Scholar',
-    title: 'Young Investigator',
+    affiliation: 'University of Illinois at Urbana-Champaign',
+    title: 'Assitant Professor',
     image: '/images/people/tal.jpg',
     website: 'https://talaugust.github.io/',
     twitter: 'https://twitter.com/tal_august'
