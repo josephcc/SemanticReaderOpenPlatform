@@ -6,7 +6,7 @@ import PaperMage from '@/public/images/PaperMage.jpg'
 import ComponentLibray from '@/public/images/semantic_reader_logo.svg'
 import Github from '@/public/images/github.svg'
 import ArXiv from '@/public/images/arxiv.svg'
-import Demo from '@/public/images/demo.png'
+import Demo from '@/public/images/Demo.png'
 
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { solarizedLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
