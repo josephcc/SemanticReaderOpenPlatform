@@ -6,11 +6,102 @@ import PaperMage from '@/public/images/PaperMage.jpg'
 import ComponentLibray from '@/public/images/semantic_reader_logo.svg'
 import Github from '@/public/images/github.svg'
 import ArXiv from '@/public/images/arxiv.svg'
+import Demo from '@/public/images/demo.png'
 
+import SyntaxHighlighter from 'react-syntax-highlighter';
+import { solarizedLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
+
+const paperMageCode = `from papermage.recipes import CoreRecipe
+
+recipe = CoreRecipe()
+doc = recipe.run("paper.pdf")
+paragraphs_text = [p.text for p in doc.paragraphs]
+
+term_defs  = defaultdict(list)
+
+for sentence in doc.abstracts[0].sentences:
+    print(sentence.text)
+    # When reading a scholarly article, inline...
+    # However, it can be challenging to pri...
+    # ...
+
+    # print the first 2 words from each
+    # ['When', 'reading']
+    # ['However', 'it']
+    # ...
+
+    # bounding boxes of 4th words + definitions
+    term = sentence.words[3]
+    term_def = prompt(f'
+      {' '.join(paragraphs_text)}
+      What is the definition of "{term.text}"?'
+    )
+    term_defs.append((term.boxes, term_def))
+
+send_to_frontend(term_defs)️`
+
+const paperScrollCode1 = `import {
+  DocumentContext, DocumentWrapper,
+  Overlay, PageWrapper
+} from '@allenai/pdf-components'
+
+const Reader: React.FC = ({termDefinitions}) => {
+  const {numPages} = useContext(DocumentContext)
+  const pageIndices = [...Array(numPages).keys()]
+  return (
+    <DocumentWrapper file={pdfUrl}>
+      {pageIndices.map(pageIndex => (
+        {/* render each page + interactive overlay */}
+        <PageWrapper pageIndex={pageIndex}>
+          <Overlay>
+            {/* abstract is on page 1 */}
+            {pageIndex === 0 && (
+              {termDefinitions.map(termDefinition => (
+                <BlueTextPopover
+                  termDefinition={termDefinition}
+                />
+              )}
+            )}
+          </Overlay>
+        </PageWrapper>
+      )}
+    </DocumentWrapper>
+  )
+}
+`
+const paperScrollCode2 = `import { Popover } from 'antd'
+import { BoundingBox } from '@allenai/pdf-components'
+
+const BlueTextPopover: React.FC = (props) => {
+  const { termDefinition } = props
+  const [box, definition] = termDefinition
+  {/* show definition on click with an antd widget */}
+  {/* highlight the BoundingBox of the term */}
+  return (
+    <Popover
+      content={definition}
+      trigger="click"
+    >
+      <BoundingBox
+        className="screen-blend-blue"
+        isHighlighted={true}
+        page={box.page}
+        top={box.top}
+        left={box.left}
+        height={box.height}
+        width={box.width}
+      />
+    </Popover>
+  )
+}
+/* .screen-blend-blue {
+      background: blue;
+      mix-blend-mode: screen;} */`
 
 export default function Libraries() {
   
-  const [tab, setTab] = useState<number>(1)
+  const [tab, setTab] = useState<0|1>(1)
 
   const tabs = useRef<HTMLDivElement>(null)
 
@@ -35,7 +126,12 @@ export default function Libraries() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-3 md:pb-5">
             <h1 className="h2 mb-4">Open Source Libraries</h1>
-            <p className="text-xl text-gray-600">Process PDF Documents   ➡️  Build Interactive Reading Interfaces</p>
+            <p className="text-xl text-gray-600">
+              We provide open source packages for building interactive paper readers - PaperMage and PaperScrolls. For example, extract text from a PDF to prompt LLMs for term definitions and localize them as highlights and popups in a reader.
+            </p>
+            <div className="flex items-center justify-center">
+              <Image src={Demo} alt="Demo Screenshot" height="350"  style={{border: '1px solid #ccc', boxShadow: '0 0 10px 0px #eeeeee'}}/>
+            </div>
           </div>
 
           {/* Section content */}
@@ -48,9 +144,15 @@ export default function Libraries() {
                   <Image src={PaperMage} alt="PaperMage Logo" style={{ height: '40px !important', width: 'auto', marginRight: '8px' }} height='40' />
                   PaperMage
                 </h3>
-                <p className="text-xl text-gray-600">
+                {/* <p className="text-xl text-gray-600">
                 An open-source Python toolkit for processing and analyzing the contents of visually-rich, structured scientific documents. PaperMage offers abstractions for seamlessly representing both textual and visual paper elements, integrates several disparate state-of-the-art models into a unified framework, and provides turn-key recipes for standard scientific NLP use-cases. PaperMage has powered multiple research prototypes along with a large-scale production system, processing millions of PDFs. 
+                </p> */}
+                <p className="text-xl text-gray-600">
+                Process and Analyzing PDF Documents
                 </p>
+                  <SyntaxHighlighter style={solarizedLight} language={'python'} customStyle={{fontSize:'0.86em'}}>
+                    {paperMageCode}
+                </SyntaxHighlighter>
               </div>
               {/* Tabs buttons */}
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8" style={{display: 'flex'}}>
@@ -82,11 +184,22 @@ export default function Libraries() {
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
                 <h3 className="h3 mb-3" style={{ display: 'flex', alignItems: 'center' }}>
                   <Image src={ComponentLibray} alt="ComponentLibrary Logo"  style={{height: '32px', width: 'auto', marginRight: '8px'}}/>
-                  ComponentLibrary
+                  PaperScrolls
                 </h3>
                 <p className="text-xl text-gray-600">
-                An open-source TypeScript library for rendering, visually augmenting and adding interactivity for scientific documents. The ComponentLibrary provides reusable React components and abstractions, combined with PaperMage, the ComponentLibrary enables researchers to develop novel intelligent and interactive reading interfaces. It is used in several research prototypes listed below, and is the same library that is used in our production Semantic Reader application used by ~50k real-world users every month.
+                  Visually augmented interactive PDF documents
                 </p>
+                {/* <p className="text-xl text-gray-600">
+                An open-source TypeScript library for rendering, visually augmenting and adding interactivity for scientific documents. The ComponentLibrary provides reusable React components and abstractions, combined with PaperMage, the ComponentLibrary enables researchers to develop novel intelligent and interactive reading interfaces. It is used in several research prototypes listed below, and is the same library that is used in our production Semantic Reader application used by ~50k real-world users every month.
+                </p> */}
+
+                <div style={{textAlign: 'right', marginBottom: '-25.5px'}}>
+                  <span style={{fontSize: '0.5em'}} className={"cursor-pointer inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset mr-1" + (tab === 0 ? ' bg-blue-50 text-blue-700 ring-blue-700/10' : ' bg-white text-gray-700 ring-black-700/10')} onClick={() => setTab(0)}>Reader.tsx</span>
+                  <span style={{fontSize: '0.5em'}} className={"cursor-pointer inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset mr-1" + (tab === 1 ? ' bg-blue-50 text-blue-700 ring-blue-700/10' : ' bg-white text-gray-700 ring-black-700/10')} onClick={() => setTab(1)}>Popover.tsx</span>
+                </div>
+                <SyntaxHighlighter style={solarizedLight} language={'tsx'} customStyle={{ fontSize: '0.86em'}}>
+                  {tab === 0 ? paperScrollCode1 : paperScrollCode2}
+                </SyntaxHighlighter>
               </div>
               {/* Tabs buttons */}
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8" style={{display: 'flex'}}>
