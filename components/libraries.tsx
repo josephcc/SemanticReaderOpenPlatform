@@ -101,7 +101,7 @@ const BlueTextPopover: React.FC = (props) => {
 
 export default function Libraries() {
   
-  const [tab, setTab] = useState<0|1>(1)
+  const [tab, setTab] = useState<0|1>(0)
 
   const tabs = useRef<HTMLDivElement>(null)
 
@@ -197,10 +197,10 @@ export default function Libraries() {
                   <span style={{fontSize: '0.5em'}} className={"cursor-pointer inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset mr-1" + (tab === 0 ? ' bg-blue-50 text-blue-700 ring-blue-700/10' : ' bg-white text-gray-700 ring-black-700/10')} onClick={() => setTab(0)}>Reader.tsx</span>
                   <span style={{fontSize: '0.5em'}} className={"cursor-pointer inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset mr-1" + (tab === 1 ? ' bg-blue-50 text-blue-700 ring-blue-700/10' : ' bg-white text-gray-700 ring-black-700/10')} onClick={() => setTab(1)}>Popover.tsx</span>
                 </div>
-                <SyntaxHighlighter style={solarizedLight} language={'tsx'} customStyle={{ fontSize: '0.86em', display: tab === 0 ? 'block' : 'none'}} useInlineStyles>
+                <SyntaxHighlighter style={solarizedLight} language={'javascript'} customStyle={{ fontSize: '0.86em', display: tab === 0 ? 'block' : 'none'}} useInlineStyles>
                   {paperScrollCode1}
                 </SyntaxHighlighter>
-                <SyntaxHighlighter style={solarizedLight} language={'tsx'} customStyle={{ fontSize: '0.86em', display: tab === 1 ? 'block' : 'none'}} useInlineStyles>
+                <SyntaxHighlighter style={solarizedLight} language={'typescript'} customStyle={{ fontSize: '0.86em', display: tab === 1 ? 'block' : 'none'}} useInlineStyles>
                   {paperScrollCode2}
                 </SyntaxHighlighter>
               </div>
