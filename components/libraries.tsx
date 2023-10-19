@@ -1,16 +1,21 @@
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, CSSProperties } from 'react'
 import Image from 'next/image'
 import PaperMage from '@/public/images/PaperMage.jpg'
 import ComponentLibray from '@/public/images/semantic_reader_logo.svg'
 import Github from '@/public/images/github.svg'
 import ArXiv from '@/public/images/arxiv.svg'
-import Demo from '@/public/images/Demo.png'
+import Demo from '@/public/images/Demo.gif'
 
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { solarizedLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
+export const codeStyle: CSSProperties = {
+  fontSize:'0.86em',
+  borderRadius: '4px',
+  border: '1px solid #eee',
+}
 
 const paperMageCode = `from papermage.recipes import CoreRecipe
 
@@ -126,7 +131,7 @@ export default function Libraries() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-3 md:pb-5">
             <h1 className="h2 mb-4">Open Source Libraries</h1>
-            <p className="text-xl text-gray-600">
+            <p className="text-xl text-gray-600 mb-4">
               We provide open source packages for building interactive paper readers - PaperMage and PaperScrolls. For example, extract text from a PDF to prompt LLMs for term definitions and localize them as highlights and popups in a reader.
             </p>
             <div className="flex items-center justify-center">
@@ -150,7 +155,7 @@ export default function Libraries() {
                 <p className="text-xl text-gray-600">
                 Process and Analyzing PDF Documents
                 </p>
-                  <SyntaxHighlighter style={solarizedLight} language={'python'} customStyle={{fontSize:'0.86em'}}>
+                  <SyntaxHighlighter style={solarizedLight} language={'python'} customStyle={codeStyle}>
                     {paperMageCode}
                 </SyntaxHighlighter>
               </div>
@@ -197,10 +202,10 @@ export default function Libraries() {
                   <span style={{fontSize: '0.5em'}} className={"cursor-pointer inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset mr-1" + (tab === 0 ? ' bg-blue-50 text-blue-700 ring-blue-700/10' : ' bg-white text-gray-700 ring-black-700/10')} onClick={() => setTab(0)}>Reader.tsx</span>
                   <span style={{fontSize: '0.5em'}} className={"cursor-pointer inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset mr-1" + (tab === 1 ? ' bg-blue-50 text-blue-700 ring-blue-700/10' : ' bg-white text-gray-700 ring-black-700/10')} onClick={() => setTab(1)}>Popover.tsx</span>
                 </div>
-                <SyntaxHighlighter style={solarizedLight} language={'javascript'} customStyle={{ fontSize: '0.86em', display: tab === 0 ? 'block' : 'none'}} useInlineStyles>
+                <SyntaxHighlighter style={solarizedLight} language={'typescript'} customStyle={{ ...codeStyle, display: tab === 0 ? 'block' : 'none'}} useInlineStyles>
                   {paperScrollCode1}
                 </SyntaxHighlighter>
-                <SyntaxHighlighter style={solarizedLight} language={'typescript'} customStyle={{ fontSize: '0.86em', display: tab === 1 ? 'block' : 'none'}} useInlineStyles>
+                <SyntaxHighlighter style={solarizedLight} language={'typescript'} customStyle={{ ...codeStyle, display: tab === 1 ? 'block' : 'none'}} useInlineStyles>
                   {paperScrollCode2}
                 </SyntaxHighlighter>
               </div>
