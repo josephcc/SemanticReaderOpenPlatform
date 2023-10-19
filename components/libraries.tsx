@@ -44,7 +44,7 @@ for sentence in doc.abstracts[0].sentences:
     )
     term_defs.append((term.boxes, term_def))
 
-send_to_frontend(term_defs)️`
+send_to_paperlette_ui(term_defs)️`
 
 const paperScrollCode1 = `import {
   DocumentContext, DocumentWrapper, Overlay, PageWrapper
@@ -53,15 +53,15 @@ const paperScrollCode1 = `import {
 const Reader: React.FC = ({termDefinitions}) => {
   const {numPages} = useContext(DocumentContext)
   const pageIndices = [...Array(numPages).keys()]
-
+  /* PageWrapper: render each page */
+  /* Overlay: visual augmentations and interactions */
   return (
     <DocumentWrapper file={pdfUrl}>
       {pageIndices.map(pageIndex => (
-        {/* render each page + interactive overlay */}
         <PageWrapper pageIndex={pageIndex}>
           <Overlay>
             {/* abstract is on page 1 */}
-            {pageIndex === 0 && (
+            {pageIndex === 0 && ( 
               {termDefinitions.map(termDefinition => (
                 <BlueTextPopover
                   termDefinition={termDefinition}
