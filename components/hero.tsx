@@ -22,9 +22,20 @@ export default function Hero() {
           <div className="text-center pb-12 md:pb-16">
             <h1 className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-6" data-aos="zoom-y-out">The Semantic Reader <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400">Open Research Platform</span></h1>
             <div className="max-w-3xl mx-auto">
-              <p className="text-xl text-gray-600 mb-8 tracking-wide" data-aos="zoom-y-out" data-aos-delay="150" style={{ fontSize: '1.2em' }}>
-              <span style={{fontWeight: 'bold'}}>Semantic Reader Project</span> is a broad collaborative effort across multiple non-profit, industry, and academic institutions to create interactive, intelligent reading interfaces for research papers. The <a href="https://arxiv.org/abs/2303.14334" target="_blank" rel="noopener" style={{textDecoration: 'underline'}}>Semantic Reader research papers</a> summarizes our efforts in combining AI and HCI research to design novel, AI-powered interactive reading interfaces that address a variety of user challenges faced by today's scholars. We are also developing <a href="https://www.semanticscholar.org/product/semantic-reader" target="_blank" rel="noopener" style={{textDecoration: 'underline'}}>Semantic Reader</a> as a freely available product that integrates features from research prototypes as they mature. Finally, this website presents our core <span style={{fontWeight: 'bold'}}>Open Research Platform</span> that enabled both our intelligent reading interfaces research and the product, consisting of the <span style={{fontWeight: 'bold'}}>PaperMage</span> library for processing PDFs, and the <span style={{fontWeight: 'bold'}}>PDF Component Library</span> for building interactive reading interfaces. We hope that these resources will help accelerate research and product development in this area.
+              <p className="text-xl text-gray-600 mb-4 tracking-wide" data-aos="zoom-y-out" data-aos-delay="150" style={{ fontSize: '1.2em' }}>
+              <span style={{fontWeight: 'bold'}}>Semantic Reader Project</span> is a collaborative effort of NLP + HCI researchers from non-profit, industry, and academic institutions to create interactive, intelligent reading interfaces for scholarly papers.
+              Our research led to the creation of Semantic Reader, an application used by tens of thousands of scholars each week.
+              
               </p>
+              <p className="text-xl text-gray-600 mb-8 tracking-wide" data-aos="zoom-y-out" data-aos-delay="150" style={{ fontSize: '1.2em' }}>
+              The <span style={{fontWeight: 'bold'}}>Semantic Reader Open Research Platform</span> provides resources that enable the broader research community to explore exciting challenges around novel research support tools: <span style={{fontWeight: 'bold'}}>PaperMage</span>, a library for processing and analyzing scholarly PDFs, and <span style={{fontWeight: 'bold'}}>Paperlette</span>, a React UI component for building augmented and interactive reading interfaces. 
+              Join us in designing the future of scholarly reading interfaces with our open source libraries!
+
+              {/* We hope by providing these resources we can enable and encourage the broader research community to work on exciting novel intelligent reading interfaces for research papers with us. */}
+
+              {/* We hope that these resources will help accelerate research and product development in this area. */}
+              </p>
+              {/* The <a href="https://arxiv.org/abs/2303.14334" target="_blank" rel="noopener" style={{textDecoration: 'underline'}}>Semantic Reader research papers</a> summarizes our efforts in combining AI and HCI research to design novel, AI-powered interactive reading interfaces that address a variety of user challenges faced by today's scholars. */}
             </div>
             <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                 <a

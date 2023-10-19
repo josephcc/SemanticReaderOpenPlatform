@@ -9,7 +9,7 @@ import ArXiv from '@/public/images/arxiv.svg'
 import Demo from '@/public/images/Demo.gif'
 
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { solarizedLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { shadesOfPurple as solarizedLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 export const codeStyle: CSSProperties = {
   fontSize:'0.86em',
@@ -23,7 +23,7 @@ recipe = CoreRecipe()
 doc = recipe.run("paper.pdf")
 paragraphs_text = [p.text for p in doc.paragraphs]
 
-term_defs  = defaultdict(list)
+term_defs = []
 
 for sentence in doc.abstracts[0].sentences:
     print(sentence.text)
@@ -38,22 +38,22 @@ for sentence in doc.abstracts[0].sentences:
 
     # bounding boxes of 4th words + definitions
     term = sentence.words[3]
-    term_def = prompt(f'
-      {' '.join(paragraphs_text)}
-      What is the definition of "{term.text}"?'
+    term_def = prompt(
+      ' '.join(paragraphs_text)} + 
+      f'What is the definition of "{term.text}"?'
     )
     term_defs.append((term.boxes, term_def))
 
 send_to_frontend(term_defs)️`
 
 const paperScrollCode1 = `import {
-  DocumentContext, DocumentWrapper,
-  Overlay, PageWrapper
+  DocumentContext, DocumentWrapper, Overlay, PageWrapper
 } from '@allenai/pdf-components'
 
 const Reader: React.FC = ({termDefinitions}) => {
   const {numPages} = useContext(DocumentContext)
   const pageIndices = [...Array(numPages).keys()]
+
   return (
     <DocumentWrapper file={pdfUrl}>
       {pageIndices.map(pageIndex => (
@@ -132,7 +132,7 @@ export default function Libraries() {
           <div className="max-w-3xl mx-auto text-center pb-3 md:pb-5">
             <h1 className="h2 mb-4">Open Source Libraries</h1>
             <p className="text-xl text-gray-600 mb-4">
-              We provide open source packages for building interactive paper readers - PaperMage and PaperScrolls. For example, extract text from a PDF to prompt LLMs for term definitions and localize them as highlights and popups in a reader.
+              We provide PaperMage + PaperScrolls for building intelligent and interactive paper readers. Below we showcase how to extract text from a PDF to prompt a LLM for term definitions and then visually augment the paper with highlights and popups.
             </p>
             <div className="flex items-center justify-center">
               <Image src={Demo} alt="Demo Screenshot" height="350"  style={{border: '1px solid #ccc', boxShadow: '0 0 10px 0px #eeeeee'}}/>
@@ -189,7 +189,7 @@ export default function Libraries() {
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
                 <h3 className="h3 mb-3" style={{ display: 'flex', alignItems: 'center' }}>
                   <Image src={ComponentLibray} alt="ComponentLibrary Logo"  style={{height: '32px', width: 'auto', marginRight: '8px'}}/>
-                  PaperScrolls
+                  Paperlette
                 </h3>
                 <p className="text-xl text-gray-600">
                   Visually augmented interactive PDF documents
@@ -199,8 +199,8 @@ export default function Libraries() {
                 </p> */}
 
                 <div style={{textAlign: 'right', marginBottom: '-25.5px'}}>
-                  <span style={{fontSize: '0.5em'}} className={"cursor-pointer inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset mr-1" + (tab === 0 ? ' bg-blue-50 text-blue-700 ring-blue-700/10' : ' bg-white text-gray-700 ring-black-700/10')} onClick={() => setTab(0)}>Reader.tsx</span>
-                  <span style={{fontSize: '0.5em'}} className={"cursor-pointer inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset mr-1" + (tab === 1 ? ' bg-blue-50 text-blue-700 ring-blue-700/10' : ' bg-white text-gray-700 ring-black-700/10')} onClick={() => setTab(1)}>Popover.tsx</span>
+                  <span style={{fontSize: '0.5em', opacity: tab === 0 ? 1 : 0.6}} className={"cursor-pointer inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset mr-1 bg-blue-50 text-blue-700 ring-blue-700/10"} onClick={() => setTab(0)}>Reader.tsx</span>
+                  <span style={{fontSize: '0.5em', opacity: tab === 1 ? 1 : 0.6}} className={"cursor-pointer inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset mr-1 bg-blue-50 text-blue-700 ring-blue-700/10"} onClick={() => setTab(1)}>Popover.tsx</span>
                 </div>
                 <SyntaxHighlighter style={solarizedLight} language={'typescript'} customStyle={{ ...codeStyle, display: tab === 0 ? 'block' : 'none'}} useInlineStyles>
                   {paperScrollCode1}
