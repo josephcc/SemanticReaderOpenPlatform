@@ -30,6 +30,7 @@ export const metadata = {
 
 export default async function Home() {
   const tutorialFp = path.join('app', 'PaperPlain', 'tutorial.md')
+  // read from file and remove first heading
   const tutorialMd = (await fs.promises.readFile(tutorialFp, 'utf8')).trim().replace(/#[\w\W]+?\n+?/,"")
   const paper = (await fetchPapers([247187606]))?.[0]
 
