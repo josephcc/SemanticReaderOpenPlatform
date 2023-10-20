@@ -9,7 +9,7 @@ import ArXiv from '@/public/images/arxiv.svg'
 import Demo from '@/public/images/Demo.gif'
 
 import SyntaxHighlighter from 'react-syntax-highlighter';
-import { shadesOfPurple as solarizedLight } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import { shadesOfPurple } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 export const codeStyle: CSSProperties = {
   fontSize:'0.86em',
@@ -132,7 +132,7 @@ export default function Libraries() {
           <div className="max-w-3xl mx-auto text-center pb-3 md:pb-5">
             <h1 className="h2 mb-4">Open Source Libraries</h1>
             <p className="text-xl text-gray-600 mb-4">
-              We provide PaperMage + PaperScrolls for building intelligent and interactive paper readers. Below we showcase how to extract text from a PDF to prompt a LLM for term definitions and then visually augment the paper with highlights and popups.
+              We provide PaperMage + PaperCraft for building intelligent and interactive paper readers. Below we showcase how to extract text from a PDF to prompt a LLM for term definitions and then visually augment the paper with highlights and popups.
             </p>
             <div className="flex items-center justify-center">
               <Image src={Demo} alt="Demo Screenshot" height="350"  style={{border: '1px solid #ccc', boxShadow: '0 0 10px 0px #eeeeee'}}/>
@@ -155,7 +155,7 @@ export default function Libraries() {
                 <p className="text-xl text-gray-600">
                 Process and Analyzing PDF Documents
                 </p>
-                  <SyntaxHighlighter style={solarizedLight} language={'python'} customStyle={codeStyle}>
+                  <SyntaxHighlighter style={shadesOfPurple} language={'python'} customStyle={codeStyle}>
                     {paperMageCode}
                 </SyntaxHighlighter>
               </div>
@@ -189,7 +189,7 @@ export default function Libraries() {
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
                 <h3 className="h3 mb-3" style={{ display: 'flex', alignItems: 'center' }}>
                   <Image src={ComponentLibray} alt="ComponentLibrary Logo"  style={{height: '32px', width: 'auto', marginRight: '8px'}}/>
-                  Paperlette
+                  PaperCraft
                 </h3>
                 <p className="text-xl text-gray-600">
                   Visually augmented interactive PDF documents
@@ -202,10 +202,10 @@ export default function Libraries() {
                   <span style={{fontSize: '0.5em', opacity: tab === 0 ? 1 : 0.6}} className={"cursor-pointer inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset mr-1 bg-blue-50 text-blue-700 ring-blue-700/10"} onClick={() => setTab(0)}>Reader.tsx</span>
                   <span style={{fontSize: '0.5em', opacity: tab === 1 ? 1 : 0.6}} className={"cursor-pointer inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset mr-1 bg-blue-50 text-blue-700 ring-blue-700/10"} onClick={() => setTab(1)}>Popover.tsx</span>
                 </div>
-                <SyntaxHighlighter style={solarizedLight} language={'typescript'} customStyle={{ ...codeStyle, display: tab === 0 ? 'block' : 'none'}} useInlineStyles>
+                <SyntaxHighlighter style={shadesOfPurple} language={'typescript'} customStyle={{ ...codeStyle, display: tab === 0 ? 'block' : 'none'}} useInlineStyles>
                   {paperScrollCode1}
                 </SyntaxHighlighter>
-                <SyntaxHighlighter style={solarizedLight} language={'typescript'} customStyle={{ ...codeStyle, display: tab === 1 ? 'block' : 'none'}} useInlineStyles>
+                <SyntaxHighlighter style={shadesOfPurple} language={'typescript'} customStyle={{ ...codeStyle, display: tab === 1 ? 'block' : 'none'}} useInlineStyles>
                   {paperScrollCode2}
                 </SyntaxHighlighter>
               </div>

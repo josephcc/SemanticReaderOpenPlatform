@@ -41,19 +41,19 @@ export default function Header() {
           {/* Desktop navigation */}
           <nav className="hidden md:flex md:grow text-l" style={{ justifyContent: 'right' }}>
             {/* Desktop sign in links - align right*/}
-            <Link href="#libraries" className="block" aria-label="Home">
+            <Link href="/#libraries" className="block" aria-label="Home">
                 <span style={{color: 'gray', fontSize: '0.78em', marginLeft: '16px', position: 'relative'}}>Libraries</span>
             </Link>
 
-            <Link href="#demos" className="block" aria-label="Demos">
+            <Link href="/#demos" className="block" aria-label="Demos">
                 <span style={{color: 'gray', fontSize: '0.78em', marginLeft: '16px', position: 'relative'}}>Demos</span>
             </Link>
 
-            <Link href="#team" className="block" aria-label="Team">
+            <Link href="/#team" className="block" aria-label="Team">
                 <span style={{color: 'gray', fontSize: '0.78em', marginLeft: '16px', position: 'relative'}}>Team</span>
             </Link>
 
-            <Link href="#publications" className="block" aria-label="Publications">
+            <Link href="/#publications" className="block" aria-label="Publications">
                 <span style={{color: 'gray', fontSize: '0.78em', marginLeft: '16px', position: 'relative'}}>Publications</span>
             </Link>
           </nav>

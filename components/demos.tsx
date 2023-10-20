@@ -25,10 +25,10 @@ export default function Demos() {
               {name: 'Luca Soldaini', image: '/images/people/luca.jpg'},
             ]}/>
 
-            <Demo title="PaperPlain" subtitle="Making Medical Research Papers Approachable to Healthcare Consumers" pillTypes={[PillType.VIDEO, PillType.PAPER]} people={[{name: 'Tal August', image: '/images/people/tal.jpg'}]}/>
+            <Demo title="PaperPlain" subtitle="Making Medical Research Papers Approachable to Healthcare Consumers" pillTypes={[PillType.VIDEO, PillType.PAPER]} people={[{name: 'Tal August', image: '/images/people/tal.jpg'}]} page='/PaperPlain' />
 
 
-            <Demo title="Papeos" subtitle="Augmenting Research Papers with Author Talk Videos" pillTypes={[PillType.DEMO, PillType.SOURCE, PillType.PAPER]} />
+            <Demo title="Papeos" subtitle="Augmenting Research Papers with Author Talk Videos" pillTypes={[PillType.DEMO, PillType.SOURCE, PillType.PAPER]} people={[{ name: 'TaeSoo Kim', image: '/images/people/taesoo.jpg' }]}/>
 
             <Demo title="CiteSee" subtitle="Augmenting Citations in Papers with Persistent and Personalized Context" pillTypes={[PillType.VIDEO, PillType.PRODUCT, PillType.PAPER]}
               people={[
