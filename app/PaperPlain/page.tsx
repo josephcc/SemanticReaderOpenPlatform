@@ -2,11 +2,24 @@ import path from "path";
 import fs from 'fs';
 
 // import dynamic from "next/dynamic";
-import Markdown from 'react-markdown'
-// const Markdown = dynamic(()=> import("react-markdown"),{ssr:false})
-import style from '../css/additional-styles/air.module.scss'
+import Markdown, { Components } from 'react-markdown'
 import Paper from "@/components/paper";
 import { fetchPapers } from "@/components/papers";
+
+const markdownHDowngrade: Partial<Components> = {
+  h1(props) { return (<h3 {...props} />)},
+  h2(props) { return (<h4 {...props} />)},
+  h3(props) { return (<h5 {...props} />)},
+  h4(props) { return (<h6 {...props} />)},
+  h5(props) { return (<h6 {...props} />)},
+  code(props) { return (
+    <code {...props} style={{fontSize: '0.8em', whiteSpace: 'pre-wrap', padding: '0 4px' }} />
+
+  )},
+  pre(props) { return (
+    <pre {...props} style={{ background: '#28264b', lineHeight: 1.25, padding: '8px' }} />
+  )}
+}
 
 
 
@@ -17,7 +30,7 @@ export const metadata = {
 
 export default async function Home() {
   const tutorialFp = path.join('app', 'PaperPlain', 'tutorial.md')
-  const tutorialMd = await fs.promises.readFile(tutorialFp, 'utf8')
+  const tutorialMd = (await fs.promises.readFile(tutorialFp, 'utf8')).trim().replace(/#[\w\W]+?\n+?/,"")
   const paper = (await fetchPapers([247187606]))?.[0]
 
   return (
@@ -58,7 +71,7 @@ export default async function Home() {
                     <h3 className="h3 mb-3" style={{ display: 'flex' }}>
                       Publication
                     </h3>
-                    <p className="text-l text-gray-600">
+                    <p className="text-xl text-gray-600">
                       <Paper paper={paper} />
                     </p>
                   </div>
@@ -68,9 +81,9 @@ export default async function Home() {
                   <h3 className="h3 mb-3" style={{ display: 'flex' }}>
                     Tutorial
                   </h3>
-                  <div className="text-l text-gray-600">
-                    <Markdown className={style.Markdown}>{tutorialMd}</Markdown>
-                  </div>
+                  <article className="prose lg:prose-xl">
+                    <Markdown components={markdownHDowngrade}>{tutorialMd}</Markdown>
+                  </article>
                 </div>
 
               </div>
