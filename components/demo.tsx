@@ -1,4 +1,5 @@
 import Link from "next/link"
+import PersonLight from "./personLight"
 
 export enum PillType {
   DEMO = 'demo',
@@ -29,10 +30,7 @@ const Demo: React.FC<PropType> = (props) => {
       <div className="relative flex flex-col items-center p-6 bg-white rounded shadow-xl" style={{ border: '1px solid #efefef' }}>
         <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', width: '80%' }}>
           {people.map(person => (
-            <div key={person.name} style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-              <img className='shadow-lg' src={person.image ?? 'https://cataas.com/cat'} alt={`Photo of ${person.name}`} style={{ borderRadius: '100%', marginBottom: '0px', width: '64px', height: '64px' }} width='64' height='64' data-aos="zoom-y-out" data-aos-delay="100" />
-              <div style={{ fontSize: '0.7em', color: '#aaa' }}>{person.name}</div>
-            </div>
+            <PersonLight key={person.name} person={person} />
           ))}
         </div>
         <h4 className="text-xl font-bold leading-snug tracking-tight mb-1">{title}</h4>
