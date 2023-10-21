@@ -7,7 +7,8 @@ export enum PillType {
   PRODUCT = 'product',
   PAPER = 'paper',
   SOURCE = 'source',
-  VIDEO = 'video'
+  VIDEO = 'video',
+  FOUNDING = 'founding'
 }
 
 interface PersonType {
@@ -26,8 +27,8 @@ interface PropType {
 const Demo: React.FC<PropType> = (props) => {
   const { title, subtitle, pillTypes, people, page = '/'} = props
   return (
-    <Link href={page}>
-      <div className="relative flex flex-col items-center p-6 bg-white rounded shadow-xl" style={{ border: '1px solid #efefef' }}>
+    <Link href={page} style={{ color: '#333' }} target={page.startsWith('http') ? '_blank' : '_self'}>
+      <div className="relative flex flex-col items-center p-6 bg-white rounded shadow-xl transition ease-in duration-100 delay-10 hover:scale-105" style={{ border: '1px solid #efefef' }}>
         <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', width: '80%' }}>
           {people.map(person => (
             <PersonLight key={person.name} person={person} />
@@ -61,7 +62,10 @@ pills.set(PillType.SOURCE, (
   <span style={pillStyles} className="inline-flex items-center rounded-md bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10 mr-1">Open Sourced</span>
 ))
 pills.set(PillType.VIDEO, (
-  <span style={pillStyles} className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 mr-1">Demo Video</span>
+  <span style={pillStyles} className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 mr-1">Talk Video</span>
+))
+pills.set(PillType.FOUNDING, (
+  <span style={pillStyles} className="inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-600 ring-1 ring-inset ring-red-500/10 mr-1">Founding Project</span>
 ))
 
 export default Demo;

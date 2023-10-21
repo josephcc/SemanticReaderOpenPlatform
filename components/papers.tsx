@@ -27,7 +27,7 @@ export interface PaperType {
 }
 
 const overviewId = [257766269]
-const systemIds = [256868353, 247585131, 254591867, 252004841, 222066998, 247187606, 251402552,256846632,239011922]
+const systemIds = [261276997, 260899915, 256868353, 247585131, 254591867, 252004841, 222066998, 247187606, 251402552,256846632,239011922]
 const resourceIds = [256194545, 215416146, 216867622, 215768677, 222291111, 245704273]
 
 export async function fetchPapers(ids: number[]) {
@@ -66,7 +66,6 @@ export default async function Papers() {
           </div>
 
 
-
           {/* Testimonials */}
           <div className="max-w-3xl mx-auto mt-20" data-aos="zoom-y-out">
             <h4 className="h4 mb-2">Semantic Reader Project Overview</h4>
@@ -83,16 +82,6 @@ export default async function Papers() {
             </ul>
             <h4 className="h4 mb-2 mt-8">Interactive and Intelligent Reading Interfaces</h4>
             <ul role="list" className="divide-y divide-gray-100">
-              <li  className="flex justify-between gap-x-6 py-2">
-                <p className="text-s text-gray-600">
-                  <span style={{fontWeight: 'bold'}}>Papeos: Augmenting Research Papers with Talk Videos</span>. The ACM Symposium on User Interface Software and Technology. 2023. Tae Soo Kim, Matt Latzke, Jonathan Bragg, Amy X. Zhang, Joseph Chee Chang.
-                </p>
-              </li>
-              <li  className="flex justify-between gap-x-6 py-2">
-                <p className="text-s text-gray-600">
-                  <span style={{fontWeight: 'bold'}}>Synergi: A Mixed-Initiative System for Scholarly Synthesis and Sensemaking</span>. The ACM Symposium on User Interface Software and Technology. 2023. Hyeonsu B Kang, Tongshuang Wu, Joseph Chee Chang,  A. Kittur.
-                </p>
-              </li>
               {systems && systems.map((paper, idx) => {
                 return (
                   <li key={idx} className="flex justify-between gap-x-6 py-2">

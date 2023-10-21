@@ -10,6 +10,7 @@ import Demo from '@/public/images/Demo.gif'
 
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { shadesOfPurple } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+import Link from 'next/link'
 
 export const codeStyle: CSSProperties = {
   fontSize:'0.86em',
@@ -153,7 +154,7 @@ export default function Libraries() {
                 An open-source Python toolkit for processing and analyzing the contents of visually-rich, structured scientific documents. PaperMage offers abstractions for seamlessly representing both textual and visual paper elements, integrates several disparate state-of-the-art models into a unified framework, and provides turn-key recipes for standard scientific NLP use-cases. PaperMage has powered multiple research prototypes along with a large-scale production system, processing millions of PDFs. 
                 </p> */}
                 <p className="text-xl text-gray-600">
-                Process and Analyzing PDF Documents
+                Process and Analyze Scholarly PDF Documents
                 </p>
                   <SyntaxHighlighter style={shadesOfPurple} language={'python'} customStyle={codeStyle}>
                     {paperMageCode}
@@ -180,7 +181,7 @@ export default function Libraries() {
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
                     <Image src={ArXiv} alt="arXiv Logo" style={{ height: '22px !important', width: 'auto' }} />
                   </div>
-                  <div className="font-bold tracking-tight" style={{marginLeft: '16px'}}>Read the Paper</div>
+                  <div className="font-bold tracking-tight" style={{marginLeft: '16px'}}>Paper Coming Soon</div>
                 </a>
               </div>
             </div>
@@ -192,7 +193,7 @@ export default function Libraries() {
                   PaperCraft
                 </h3>
                 <p className="text-xl text-gray-600">
-                  Visually augmented interactive PDF documents
+                  Create Visually Augmented Interactive Readers 
                 </p>
                 {/* <p className="text-xl text-gray-600">
                 An open-source TypeScript library for rendering, visually augmenting and adding interactivity for scientific documents. The ComponentLibrary provides reusable React components and abstractions, combined with PaperMage, the ComponentLibrary enables researchers to develop novel intelligent and interactive reading interfaces. It is used in several research prototypes listed below, and is the same library that is used in our production Semantic Reader application used by ~50k real-world users every month.
@@ -221,17 +222,16 @@ export default function Libraries() {
                   </div>
                   <div className="font-bold tracking-tight" style={{marginLeft: '16px'}}>Source Code</div>
                 </a>
-                <a
+                <Link
                   className='flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
-                  href="https://github.com/allenai/papermage"
+                  href="/PaperCraft"
                   style={{ flexGrow: 1 }}
-                  target='_blank' rel='noreferrer'
                 >
-                  <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
-                    <Image src={ArXiv} alt="arXiv Logo" style={{ height: '22px !important', width: 'auto' }} />
+                  <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3" style={{ fontSize: '28px' }}>
+                    📄
                   </div>
                   <div className="font-bold tracking-tight" style={{marginLeft: '16px'}}>Read the Tutorial</div>
-                </a>
+                </Link>
               </div>
             </div>
 

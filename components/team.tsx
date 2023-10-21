@@ -122,18 +122,21 @@ const PlatformPeople: PersonType[] = [
   {
     name: 'Smita Rao',
     title: 'Engineering Manager',
+    image: '/images/people/smita.jpeg',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
     website: 'https://www.linkedin.com/in/smita-rao-b5609448/'
   },
   {
     name: 'Tyler Murray',
     title: 'Software Engineer',
+    image: '/images/people/tyler.jpeg',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
     website:'https://www.linkedin.com/in/tcmurray/'
   },
   {
     name: 'Chloe Anastasiades',
     title: 'Software Engineer',
+    image: '/images/people/chloe.jpeg',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
     website: 'https://www.linkedin.com/in/chloe-anastasiades/'
   },
@@ -193,6 +196,7 @@ const InterfacePeople: PersonType[] = [
     affiliation: 'Allen Institute for AI, Semantic Scholar',
     title: 'Product Designer',
     website: 'https://www.cassidytrier.com/',
+    image: '/images/people/cassidy.png',
     twitter: 'https://twitter.com/TrierCassidy'
   },
 ]

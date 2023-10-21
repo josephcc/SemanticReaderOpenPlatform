@@ -47,9 +47,9 @@ export default async function Home() {
             {/* Section header */}
             <div className="max-w-3xl mx-auto text-center pb-3 md:pb-5">
               <PersonLight person={{name: 'Tal August', image: '/images/people/tal.jpg'}} />
-              <h1 className="h2 mb-4">PaperPlain</h1>
+              <h1 className="h2 mb-4">Paper Plain</h1>
               <p className="text-xl text-gray-600 mb-4">
-                We provide PaperMage + PaperCraft for building intelligent and interactive paper readers. Below we showcase how to extract text from a PDF to prompt a LLM for term definitions and then visually augment the paper with highlights and popups.
+                When seeking information not covered in patient-friendly documents, healthcare consumers may turn to the research literature. Reading medical papers, however, can be a challenging experience. To improve access to medical papers, we explore four features enabled by natural language processing: definitions of unfamiliar terms, in-situ plain language section summaries, a collection of key questions that guides readers to answering passages, and plain language summaries of those passages. We embody these features into a prototype system, Paper Plain. We evaluate Paper Plain, finding that participants who used the prototype system had an easier time reading research papers without a loss in paper comprehension compared to those who used a typical PDF reader. Altogether, the study results suggest that guiding readers to relevant passages and providing plain language summaries alongside the original paper content can make reading medical papers easier and give readers more confidence to approach these papers.
               </p>
             </div>
 
@@ -61,10 +61,10 @@ export default async function Home() {
 
                 <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
                   <h3 className="h3 mb-3 mt-8" style={{ display: 'flex' }}>
-                    Demo
+                    Interactive Demo
                   </h3>
                   <p className="text-xl text-gray-600">
-                    Link to demo and show a gif?
+                    <a href='https://paper-plain.apps.allenai.org/reader/707201' target='_blank'>Play with the Demo</a>
                   </p>
                 </div>
 
@@ -81,9 +81,11 @@ export default async function Home() {
 
                 <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
                   <h3 className="h3 mb-3 mt-8" style={{ display: 'flex' }}>
-                    Tutorial
+                    How to build PaperPlain with PaperMage and PaperCraft
                   </h3>
                   <article className="prose lg:prose-xl">
+                    Source code will be available soon.
+
                     <Markdown components={markdownHDowngrade}>{tutorialMd}</Markdown>
                   </article>
                 </div>

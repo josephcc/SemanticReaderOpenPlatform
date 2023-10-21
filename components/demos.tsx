@@ -20,26 +20,26 @@ export default function Demos() {
           {/* Items */}
           <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
 
-            <Demo title="LLM Paper QA" subtitle="A GPT-powered PDF QA system with attribution support." pillTypes={[PillType.DEMO, PillType.SNIPPET]} people={[
+            <Demo title="LLM Paper Q&A" subtitle="A GPT-powered PDF QA system with attribution support." pillTypes={[PillType.DEMO, PillType.SNIPPET]} people={[
               {name: 'Joseph Chee Chang', image: '/images/people/joseph.jpg'},
               {name: 'Luca Soldaini', image: '/images/people/luca.jpg'},
             ]}/>
 
-            <Demo title="PaperPlain" subtitle="Making Medical Research Papers Approachable to Healthcare Consumers" pillTypes={[PillType.VIDEO, PillType.PAPER]} people={[{name: 'Tal August', image: '/images/people/tal.jpg'}]} page='/PaperPlain' />
+            <Demo title="PaperPlain" subtitle="Making Medical Research Papers Approachable to Healthcare Consumers" pillTypes={[PillType.DEMO, PillType.SNIPPET, PillType.PAPER]} people={[{name: 'Tal August', image: '/images/people/tal.jpg'}]} page='/PaperPlain' />
 
 
-            <Demo title="Papeos" subtitle="Augmenting Research Papers with Author Talk Videos" pillTypes={[PillType.DEMO, PillType.SOURCE, PillType.PAPER]} people={[{ name: 'TaeSoo Kim', image: '/images/people/taesoo.jpg' }]}/>
+            <Demo title="Papeos" subtitle="Augmenting Research Papers with Author Talk Videos" pillTypes={[PillType.VIDEO, PillType.DEMO, PillType.PAPER]} people={[{ name: 'TaeSoo Kim', image: '/images/people/taesoo.jpg' }]} page='/Papeos'/>
 
             <Demo title="CiteSee" subtitle="Augmenting Citations in Papers with Persistent and Personalized Context" pillTypes={[PillType.VIDEO, PillType.PRODUCT, PillType.PAPER]}
               people={[
                 { name: 'Joseph Chee Chang', image: '/images/people/joseph.jpg' },
               ]}
-
+              page='/CiteSee'
             />
 
-            <Demo title="Scim" subtitle="Automatic highlights for skimming support of scientific papers" pillTypes={[PillType.PRODUCT, PillType.SNIPPET, PillType.PAPER]} people={[{name: 'Raymond Fok', image: '/images/people/ray.jpg'}]}/>
+            <Demo title="Scim" subtitle="Automatic highlights for skimming support of scientific papers" pillTypes={[PillType.PRODUCT,  PillType.PAPER]} people={[{name: 'Raymond Fok', image: '/images/people/ray.jpg'}]} page='/Scim' />
 
-            <Demo title="ScholarPhi" subtitle="Augmenting Papers with Just-in-Time Definitions of Terms and Symbols" pillTypes={[PillType.SOURCE, PillType.VIDEO, PillType.PAPER]} people={[{name: 'Andrew Head', image: '/images/people/andrew.jpg'}, {name: 'Kyle Lo', image: '/images/people/kyle.jpg'}]}/>
+            <Demo title="ScholarPhi" subtitle="Augmenting Papers with Just-in-Time Definitions of Terms and Symbols" pillTypes={[PillType.FOUNDING, PillType.DEMO, PillType.PAPER]} people={[{name: 'Andrew Head', image: '/images/people/andrew.jpg'}, {name: 'Kyle Lo', image: '/images/people/kyle.jpg'}]} page='https://scholarphi.org/'/>
 
 
           </div>
