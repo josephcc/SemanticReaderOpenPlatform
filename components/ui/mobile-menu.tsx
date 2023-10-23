@@ -75,6 +75,11 @@ export default function MobileMenu() {
                 <span style={{ color: 'gray', fontSize: '0.78em', marginLeft: '16px', position: 'relative' }}>Demos</span>
               </Link>
             </li>
+            <li onClick={() => setMobileNavOpen(!mobileNavOpen)}>
+              <Link href="#publications" className="block" aria-label="Publications">
+                <span style={{ color: 'gray', fontSize: '0.78em', marginLeft: '16px', position: 'relative' }}>Publications</span>
+              </Link>
+            </li>
 
             <li onClick={() => setMobileNavOpen(!mobileNavOpen)}>
 
@@ -84,11 +89,6 @@ export default function MobileMenu() {
 
             </li>
 
-            <li onClick={() => setMobileNavOpen(!mobileNavOpen)}>
-              <Link href="#publications" className="block" aria-label="Publications">
-                <span style={{ color: 'gray', fontSize: '0.78em', marginLeft: '16px', position: 'relative' }}>Publications</span>
-              </Link>
-            </li>
           </ul>
         </Transition>
       </div>

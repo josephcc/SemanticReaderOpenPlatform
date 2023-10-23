@@ -17,10 +17,10 @@ export default function Home() {
       <Libraries />
       <div id='demos' style={{position: 'relative', top: '-60px'}}/>
       <Demos />
-      <div id='team' style={{position: 'relative', top: '-60px'}}/>
-      <Team />
       <div id='publications' style={{position: 'relative', top: '-60px'}}/>
       <Papers />
+      <div id='team' style={{position: 'relative', top: '-60px'}}/>
+      <Team />
     </>
   )
 }

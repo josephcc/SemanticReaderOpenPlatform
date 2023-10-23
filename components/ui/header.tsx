@@ -49,14 +49,16 @@ export default function Header() {
                 <span style={{color: 'gray', fontSize: '0.78em', marginLeft: '16px', position: 'relative'}}>Demos</span>
             </Link>
 
-            <Link href="/#team" className="block" aria-label="Team">
-                <span style={{color: 'gray', fontSize: '0.78em', marginLeft: '16px', position: 'relative'}}>Team</span>
-            </Link>
-
             <Link href="/#publications" className="block" aria-label="Publications">
                 <span style={{color: 'gray', fontSize: '0.78em', marginLeft: '16px', position: 'relative'}}>Publications</span>
             </Link>
+
+
+            <Link href="/#team" className="block" aria-label="Team">
+                <span style={{color: 'gray', fontSize: '0.78em', marginLeft: '16px', position: 'relative'}}>Team</span>
+            </Link>
           </nav>
+
 
           <MobileMenu />
 

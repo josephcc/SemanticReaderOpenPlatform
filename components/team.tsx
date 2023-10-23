@@ -9,6 +9,7 @@ import MIT from '@/public/images/institutes/mit.png'
 import UIUC from '@/public/images/institutes/uiuc.png'
 import { PersonType } from './person'
 import PersonShuffleList from './personShuffleList'
+import Institutions from './institutions'
 
 export default function Team() {
   return (
@@ -24,48 +25,11 @@ export default function Team() {
               <Link href="#publications" aria-label="Publications">
                 <span style={{ textDecoration: 'underline' }}>Project Overview Paper</span>
               </Link>
-              &nbsp;below to see a full list of contributors.</p>
+              &nbsp;to see a full list of contributors.</p>
           </div>
         </div>
 
-        {/* Items */}
-        <div className="max-w-sm md:max-w-4xl mx-auto pb-8" style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
-
-          {/* Item */}
-          <div className="flex items-center justify-center py-2">
-            <Image src={AI2} alt="AI2 Logo" height="40" />
-          </div>
-
-          {/* Item
-            <div className="flex items-center justify-center py-2 col-span-2 md:col-auto">
-                <Image src={S2} alt="S2 Logo" height="40" />
-            </div> */}
-
-          {/* Item */}
-          <div className="flex items-center justify-center py-2">
-            <Image src={UW} alt="UW Logo" height="40" />
-          </div>
-
-          {/* Item */}
-          <div className="flex items-center justify-center py-2">
-            <Image src={Berkeley} alt="UCB Logo" height="40" />
-          </div>
-
-          {/* Item */}
-          <div className="flex items-center justify-center py-2">
-            <Image src={UPenn} alt="UPenn Logo" height="40" />
-          </div>
-
-          {/* Item */}
-          <div className="flex items-center justify-center py-2">
-            <Image src={MIT} alt="MIT Logo" height="34" />
-          </div>
-
-          <div className="flex items-center justify-center py-2">
-            <Image src={UIUC} alt="UIUC Logo" height="34" />
-          </div>
-
-        </div>
+        <Institutions />
 
         <div>
           <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Research Libraries and Tooling</h4>

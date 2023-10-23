@@ -3,6 +3,7 @@ import ArXiv from '@/public/images/arxiv.svg'
 import SemanticReader from '@/public/images/semantic_reader_logo.svg'
 
 import HeroBackground from '@/public/images/hero-background.jpg'
+import Institutions from './institutions'
 
 export default function Hero() {
   return (
@@ -37,7 +38,7 @@ export default function Hero() {
               </p>
               {/* The <a href="https://arxiv.org/abs/2303.14334" target="_blank" rel="noopener" style={{textDecoration: 'underline'}}>Semantic Reader research papers</a> summarizes our efforts in combining AI and HCI research to design novel, AI-powered interactive reading interfaces that address a variety of user challenges faced by today's scholars. */}
             </div>
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '14px'}}>
                 <a
                   style={{ flexShrink: 1, marginRight: '16px' }}
                   className='flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
@@ -62,6 +63,8 @@ export default function Hero() {
                 </a>
 
             </div>
+
+            <Institutions />
           </div>
 
         </div>
