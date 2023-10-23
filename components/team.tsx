@@ -73,7 +73,7 @@ export default function Team() {
             <PersonShuffleList people={PlatformPeople} />
           </div>
           <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Intelligent Reading Interfaces Research</h4>
-          <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
+          <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-4 items-start md:max-w-2xl lg:max-w-none">
             <PersonShuffleList people={InterfacePeople} />
           </div>
           <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Research Advisory Board</h4>
@@ -170,7 +170,7 @@ const InterfacePeople: PersonType[] = [
   {
     name: 'Andrew Head',
     image: '/images/people/andrew.jpg',
-    affiliation: 'UPenn',
+    affiliation: 'University of Pennsylvania',
     title: 'Assistant Professor',
     website: 'https://andrewhead.info/',
     twitter: 'https://twitter.com/drewmikehead'
@@ -198,6 +198,21 @@ const InterfacePeople: PersonType[] = [
     website: 'https://www.cassidytrier.com/',
     image: '/images/people/cassidy.png',
     twitter: 'https://twitter.com/TrierCassidy'
+  },
+  {
+    name: 'Kyle Lo',
+    image: '/images/people/kyle.jpg',
+    affiliation: 'Allen Institute for AI, Semantic Scholar',
+    website: 'https://kyleclo.github.io/',
+    twitter: 'https://twitter.com/kylelostat',
+    title: 'Research Scientist'
+  },
+  {
+    name: 'Matt Latzke',
+    image: '/images/people/matt.jpeg',
+    affiliation: 'Allen Institute for AI, Semantic Scholar',
+    website: 'https://www.linkedin.com/in/mlatzke/',
+    title: 'Product Designer'
   },
 ]
 
