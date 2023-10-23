@@ -18,10 +18,10 @@ export default function Demos() {
           </div>
 
           {/* Items */}
-          <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
+          <div className="max-w-sm mx-auto grid gap-4 md:grid-cols-2 lg:grid-cols-4 items-start md:max-w-2xl lg:max-w-none">
 
             <Demo title="LLM Paper Q&A" subtitle="A GPT-powered PDF QA system with attribution support." pillTypes={[PillType.DEMO, PillType.SNIPPET]} people={[
-              {name: 'Joseph Chee Chang', image: '/images/people/joseph.jpg'},
+              {name: 'Joseph Chang', image: '/images/people/joseph.jpg'},
               {name: 'Luca Soldaini', image: '/images/people/luca.jpg'},
             ]}/>
 
@@ -36,8 +36,13 @@ export default function Demos() {
               ]}
               page='/CiteSee'
             />
+            
+            <Demo title="CiteRead" subtitle="Localizing Incoming Citations from Follow on Papers in the Margins" pillTypes={[PillType.DEMO, PillType.PAPER]} people={[{name: 'Napol Rachatasumrit', image: '/images/people/napol.png'}]} page='/CiteRead'/>
+
+            <Demo title="Threddy & Synergi" subtitle="Clipping Research Threads from Papers for Synthesis and Exploration" pillTypes={[PillType.VIDEO, PillType.PAPER]} people={[{name: 'Hyeonsu B. Kang', image: '/images/people/hyeonsu.png'}]} page='/Threddy'/>
 
             <Demo title="Scim" subtitle="Automatic highlights for skimming support of scientific papers" pillTypes={[PillType.PRODUCT,  PillType.PAPER]} people={[{name: 'Raymond Fok', image: '/images/people/ray.jpg'}]} page='/Scim' />
+            
 
             <Demo title="ScholarPhi" subtitle="Augmenting Papers with Just-in-Time Definitions of Terms and Symbols" pillTypes={[PillType.FOUNDING, PillType.DEMO, PillType.PAPER]} people={[{name: 'Andrew Head', image: '/images/people/andrew.jpg'}, {name: 'Kyle Lo', image: '/images/people/kyle.jpg'}]} page='https://scholarphi.org/'/>
 

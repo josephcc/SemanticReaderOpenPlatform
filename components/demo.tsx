@@ -28,7 +28,7 @@ const Demo: React.FC<PropType> = (props) => {
   const { title, subtitle, pillTypes, people, page = '/'} = props
   return (
     <Link href={page} style={{ color: '#333' }} target={page.startsWith('http') ? '_blank' : '_self'}>
-      <div className="relative flex flex-col items-center p-6 bg-white rounded shadow-xl transition ease-in duration-100 delay-10 hover:scale-105" style={{ border: '1px solid #efefef' }}>
+      <div className="relative flex flex-col items-center p-6 bg-white rounded shadow-xl transition ease-in duration-100 delay-10 hover:scale-105" style={{ border: '1px solid #efefef', minHeight: '295px' }}>
         <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'center', width: '80%' }}>
           {people.map(person => (
             <PersonLight key={person.name} person={person} />
