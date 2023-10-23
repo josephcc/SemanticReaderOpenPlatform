@@ -25,7 +25,7 @@ const markdownHDowngrade: Partial<Components> = {
 
 export const metadata = {
   title: 'PaperPlain - Semantic Reader Open Research Platform',
-  description: "PaperPlain - Semantic Reader Open Research Platform",
+  description: "Paper Plain: Making Medical Research Papers Approachable to Healthcare Consumers with Natural Language Processing",
 }
 
 export default async function Home() {
@@ -64,20 +64,9 @@ export default async function Home() {
                     Interactive Demo
                   </h3>
                   <p className="text-xl text-gray-600">
-                    <a href='https://paper-plain.apps.allenai.org/reader/707201' target='_blank'>Play with the Demo</a>
+                    <a href='https://paper-plain.apps.allenai.org/reader/707201' target='_blank'>Play with the Paper Plain demo</a>
                   </p>
                 </div>
-
-                {paper && (
-                  <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
-                    <h3 className="h3 mb-3 mt-8" style={{ display: 'flex' }}>
-                      Publication
-                    </h3>
-                    <p className="text-xl text-gray-600">
-                      <Paper paper={paper} />
-                    </p>
-                  </div>
-                )}
 
                 <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
                   <h3 className="h3 mb-3 mt-8" style={{ display: 'flex' }}>
@@ -90,6 +79,17 @@ export default async function Home() {
                   </article>
                 </div>
 
+
+                {paper && (
+                  <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
+                    <h3 className="h3 mb-3 mt-8" style={{ display: 'flex' }}>
+                      Publication
+                    </h3>
+                    <p className="text-xl text-gray-600">
+                      <Paper paper={paper} />
+                    </p>
+                  </div>
+                )}
               </div>
 
               {/* Tabs items */}

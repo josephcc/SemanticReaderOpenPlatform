@@ -8,8 +8,8 @@ import Screenshot from '@/public/images/demos/scim.jpg'
 import Link from "next/link";
 
 export const metadata = {
-  title: 'PaperPlain - Semantic Reader Open Research Platform',
-  description: "PaperPlain - Semantic Reader Open Research Platform",
+  title: 'SCIM - Semantic Reader Open Research Platform',
+  description: "Scim: Intelligent Skimming Support for Scientific Papers.",
 }
 
 export default async function Home() {

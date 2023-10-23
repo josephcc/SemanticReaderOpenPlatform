@@ -14,11 +14,10 @@ import image8 from '@/public/images/demos/papeos/image8.gif'
 import image9 from '@/public/images/demos/papeos/image9.gif'
 import image10 from '@/public/images/demos/papeos/image10.gif'
 import image11 from '@/public/images/demos/papeos/image11.gif'
-import Link from "next/link";
 
 export const metadata = {
-  title: 'PaperPlain - Semantic Reader Open Research Platform',
-  description: "PaperPlain - Semantic Reader Open Research Platform",
+  title: 'Papeos - Semantic Reader Open Research Platform',
+  description: "Papeos: Augmenting Research Papers with Talk Videos.",
 }
 
 export default async function Home() {
@@ -49,6 +48,15 @@ export default async function Home() {
               {/* Content */}
               <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-12 lg:col-span-12 md:mt-12" data-aos="fade-right">
 
+                <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
+                  <h3 className="h3 mb-3 mt-8" style={{ display: 'flex' }}>
+                    Interactive Demo
+                  </h3>
+                  <p className="text-xl text-gray-600">
+                    <a href='https://papeo.app/demo' target='_blank'>Play with Papeos on the Papeos Paper</a>
+                  </p>
+                </div>
+
 
                 <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
                   <h3 className="h3 mb-3 mt-8" style={{ display: 'flex' }}>
@@ -56,15 +64,6 @@ export default async function Home() {
                   </h3>
                   <p className="text-xl text-gray-600">
                     <iframe width="840" height="473" src="https://www.youtube.com/embed/YyqYkL9VeWM?si=y-8YfaqVbZlsnzq6" title="YouTube video player" style={{ boxShadow: 'gray 0px 0px 10px 0px', marginTop: '12px' }} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
-                  </p>
-                </div>
-
-                <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
-                  <h3 className="h3 mb-3 mt-8" style={{ display: 'flex' }}>
-                    Interactive Demo
-                  </h3>
-                  <p className="text-xl text-gray-600">
-                    <a href='https://papeo.app/demo' target='_blank'>Play with Papeos on the Papeos Paper</a>
                   </p>
                 </div>
 

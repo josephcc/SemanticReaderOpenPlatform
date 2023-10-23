@@ -8,8 +8,8 @@ import Screenshot from '@/public/images/demos/citesee.jpg'
 import Link from "next/link";
 
 export const metadata = {
-  title: 'PaperPlain - Semantic Reader Open Research Platform',
-  description: "PaperPlain - Semantic Reader Open Research Platform",
+  title: 'CiteSee - Semantic Reader Open Research Platform',
+  description: "CiteSee: Augmenting Citations in Scientific Papers with Persistent and Personalized Historical Context.",
 }
 
 export default async function Home() {
