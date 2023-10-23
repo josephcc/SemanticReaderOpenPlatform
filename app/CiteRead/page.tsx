@@ -43,12 +43,11 @@ export default async function Home() {
                   </h3>
                   <p className="text-xl text-gray-600">
                     Open the following papers in CiteRead to see how it works!
-                    <ul>
-                      <li>- <a href='https://citextreader.s3.us-west-2.amazonaws.com/demo/index.html?file=https://citextreader.s3.us-west-2.amazonaws.com/papers/90bd099501147609165971b27b5514a2b9c2a7e7.pdf#' target='_blank'>A New Chatbot for Customer Service on Social Media. Xu et al. 2017.</a></li>
-                      <li>- <a href='https://citextreader.s3.us-west-2.amazonaws.com/demo/index.html?file=https://citextreader.s3.us-west-2.amazonaws.com/papers/3c76b9192e0828c87ce8d2b8aaee197d9700dd68.pdf#' target='_blank'>Serendipity: Finger Gesture Recognition usingan Off-the-Shelf Smartwatch. Wen et al. 2016.</a></li>
-                    </ul>
-                    
                   </p>
+                  <ul>
+                    <li>- <a href='https://citextreader.s3.us-west-2.amazonaws.com/demo/index.html?file=https://citextreader.s3.us-west-2.amazonaws.com/papers/90bd099501147609165971b27b5514a2b9c2a7e7.pdf#' target='_blank'>A New Chatbot for Customer Service on Social Media. Xu et al. 2017.</a></li>
+                    <li>- <a href='https://citextreader.s3.us-west-2.amazonaws.com/demo/index.html?file=https://citextreader.s3.us-west-2.amazonaws.com/papers/3c76b9192e0828c87ce8d2b8aaee197d9700dd68.pdf#' target='_blank'>Serendipity: Finger Gesture Recognition usingan Off-the-Shelf Smartwatch. Wen et al. 2016.</a></li>
+                  </ul>
                 </div>
 
                 <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
