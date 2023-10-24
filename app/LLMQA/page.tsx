@@ -59,6 +59,12 @@ export default async function Home() {
                   </h3>
                   <p className="text-xl text-gray-600">
                     Coming soon..
+
+                    <a href='https://github.com/allenai/papermage/pull/52/files' target='_blank'>https://github.com/allenai/papermage/pull/52/files</a>
+
+
+
+                    this code but with more comments
                   </p>
                 </div>
 
