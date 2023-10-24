@@ -36,7 +36,7 @@ export default function Demos() {
             <Demo title="LLM Paper Q&A" subtitle="A GPT-powered PDF QA system with attribution support." pillTypes={[PillType.DEMO, PillType.SNIPPET]} people={[
               {name: 'Joseph Chang', image: '/images/people/joseph.jpg'},
               {name: 'Luca Soldaini', image: '/images/people/luca.jpg'},
-            ]}/>
+            ]} page='/LLMQA' />
 
             <Demo title="Paper Plain" subtitle="Making Medical Research Papers Approachable to Healthcare Consumers" pillTypes={[PillType.DEMO, PillType.SNIPPET, PillType.PAPER]} people={[{name: 'Tal August', image: '/images/people/tal.jpg'}]} page='/PaperPlain' />
 
