@@ -115,11 +115,22 @@ module.exports = {
       },
       animation: {
         float: 'float 3s ease-in-out infinite',
+        text: 'text 3s ease infinite',
       },
       keyframes: {
         float: {
           '0%, 100%': { transform: 'translateY(0)', },
           '50%': { transform: 'translateY(-5%)', },
+        },
+        text: {
+          '0%, 100%': {
+            'background-size': '100% 100%',
+            'background-position': 'left center',
+          },
+          '40%': {
+            'background-size': '175% 175%',
+            'background-position': 'right center',
+          },
         },
       },
       zIndex: {
