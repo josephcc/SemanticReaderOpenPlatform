@@ -18,6 +18,12 @@ const markdownHDowngrade: Partial<Components> = {
   h3(props) { return (<h5 {...props} />) },
   h4(props) { return (<h6 {...props} />) },
   h5(props) { return (<h6 {...props} />) },
+  table(props) {
+    return (
+      <table {...props} style={{ fontSize: '0.8em' }} />
+
+    )
+  },
   code(props) {
     return (
       <code {...props} style={{ fontSize: '0.8em', whiteSpace: 'pre-wrap', padding: '0 4px' }} />
@@ -43,7 +49,7 @@ export default async function Home() {
   const tutorialMd = (await fs.promises.readFile(tutorialFp, 'utf8')).trim().replace(/#[\w\W]+?\n+?/, "")
 
   return (
-    <div style={{ marginTop: '100px' }}>
+    <div style={{ paddingTop: '100px' }}>
       <section className="relative">
 
         {/* Section background (needs .relative class on parent and next sibling elements) */}
@@ -73,18 +79,18 @@ export default async function Home() {
                   </h3>
                   <p className="text-xl text-gray-600">
                     <a
-                      className='flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
+                      className='inline-flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
                       href="https://github.com/allenai/pdf-component-library" style={{ marginRight: '8px', flexGrow: 1 }}
                       target='_blank' rel='noreferrer'
                     >
-                      <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
+                      <span className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
                         <Image src={Github} alt="Github Logo" style={{ height: '32px !important', width: 'auto' }} />
-                      </div>
-                      <div className="font-bold tracking-tight" style={{ marginLeft: '16px' }}>Source Code</div>
+                      </span>
+                      <span className="font-bold tracking-tight" style={{ marginLeft: '16px' }}>Source Code</span>
                     </a>
                     <a
                       style={{ flexShrink: 1 }}
-                      className='flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
+                      className='inline-flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
                       href="https://www.semanticscholar.org/product/semantic-reader"
                       target='_blank' rel='noreferrer'
                     >

@@ -16,7 +16,7 @@ export default async function Home() {
   const papers = (await fetchPapers([260899915, 251402552]))
 
   return (
-    <div style={{ marginTop: '100px' }}>
+    <div style={{ paddingTop: '100px' }}>
       <section className="relative">
 
         {/* Section background (needs .relative class on parent and next sibling elements) */}

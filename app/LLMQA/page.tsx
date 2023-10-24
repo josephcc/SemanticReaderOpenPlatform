@@ -14,7 +14,7 @@ export const metadata = {
 export default async function Home() {
 
   return (
-    <div style={{ marginTop: '100px' }}>
+    <div style={{ paddingTop: '100px' }}>
       <section className="relative">
 
         {/* Section background (needs .relative class on parent and next sibling elements) */}
