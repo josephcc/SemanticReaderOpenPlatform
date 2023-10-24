@@ -45,7 +45,7 @@ for sentence in doc.abstracts[0].sentences:
     )
     term_defs.append((term.boxes, term_def))
 
-send_to_paperlette_ui(term_defs)️`
+send_to_paper_craft_ui(term_defs)️`
 
 const paperScrollCode1 = `import {
   DocumentContext, DocumentWrapper, Overlay, PageWrapper
