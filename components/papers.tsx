@@ -97,7 +97,7 @@ export default async function Papers() {
             <ul role="list" className="divide-y divide-gray-100">
               <li className="flex justify-between gap-x-6 py-2">
                 <p className="text-s text-gray-600">
-                  <span style={{fontWeight: 'bold'}}>PaperMage: A Unified Toolkit for Processing, Representing, and Manipulating Visually-Rich Scientific Documents</span>. In Submission. 2023. Kyle Lo, Zejiang Shen, Benjamin Newman, Joseph Chee Chang, Russell Authur, Erin Bransom, Stefan Candra, Yoganand Chandrasekhar, Regan Huff, Bailey Kuehl, Amanpreet Singh, Chris Wilhelm, Angele Zamarron, Marti A. Hearst, Daniel S. Weld, Doug Downey, Luca Soldaini.
+                  <span style={{fontWeight: 'bold'}}>PaperMage: A Unified Toolkit for Processing, Representing, and Manipulating Visually-Rich Scientific Documents</span>. Conference on Empirical Methods in Natural Language Processing: Demos. 2023. Kyle Lo, Zejiang Shen, Benjamin Newman, Joseph Chee Chang, Russell Authur, Erin Bransom, Stefan Candra, Yoganand Chandrasekhar, Regan Huff, Bailey Kuehl, Amanpreet Singh, Chris Wilhelm, Angele Zamarron, Marti A. Hearst, Daniel S. Weld, Doug Downey, Luca Soldaini.
                 </p>
               </li>
               {resources && resources.map((paper, idx) => {
