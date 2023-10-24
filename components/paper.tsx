@@ -15,7 +15,7 @@ export default function Paper({paper}: {paper: PaperType}) {
     venue = 'Findings of the Association for Computational Linguistics: EMNLP. '
   }
   return (
-    <span style={{ maxWidth: '640px', display: 'inline-block' }}>
+    <span style={{ display: 'inline-block' }}>
       {paper.externalIds.CorpusId === 256868353 ? <span style={{ fontWeight: 'bold' }}>🏆 Best Paper Award<br /></span> : null}
       <a href={`https://www.semanticscholar.org/paper/${paper.paperId}`} target="_blank" style={{ fontWeight: 600 }}>{paper.title}</a><br/>{paper.authors.map((author) => author.name).join(', ')}. {venue}{paper.year}.
     </span>
