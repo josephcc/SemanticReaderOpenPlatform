@@ -42,20 +42,20 @@ export default function Header() {
           <nav className="hidden md:flex md:grow text-l" style={{ justifyContent: 'right' }}>
             {/* Desktop sign in links - align right*/}
             <Link href="/#libraries" className="block" aria-label="Home">
-                <span style={{color: 'gray', fontSize: '0.78em', marginLeft: '16px', position: 'relative'}}>Libraries</span>
+                <span style={{color: 'gray', fontSize: '0.78em', marginLeft: '16px', position: 'relative', fontWeight: 'bold' }}>Libraries</span>
             </Link>
 
             <Link href="/#demos" className="block" aria-label="Demos">
-                <span style={{color: 'gray', fontSize: '0.78em', marginLeft: '16px', position: 'relative'}}>Demos</span>
+              <span style={{ color: 'gray', fontSize: '0.78em', marginLeft: '16px', position: 'relative', fontWeight: 'bold' }}>Demos</span>
             </Link>
 
             <Link href="/#publications" className="block" aria-label="Publications">
-                <span style={{color: 'gray', fontSize: '0.78em', marginLeft: '16px', position: 'relative'}}>Publications</span>
+                <span style={{color: 'gray', fontSize: '0.78em', marginLeft: '16px', position: 'relative', fontWeight: 'bold' }}>Publications</span>
             </Link>
 
 
             <Link href="/#team" className="block" aria-label="Team">
-                <span style={{color: 'gray', fontSize: '0.78em', marginLeft: '16px', position: 'relative'}}>Team</span>
+                <span style={{color: 'gray', fontSize: '0.78em', marginLeft: '16px', position: 'relative', fontWeight: 'bold' }}>Team</span>
             </Link>
           </nav>
 

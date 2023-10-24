@@ -29,7 +29,7 @@ export default function Hero() {
               
               </p>
               <p className="text-xl text-gray-600 mb-8 tracking-wide" data-aos="zoom-y-out" data-aos-delay="150" style={{ fontSize: '1.2em' }}>
-              The <span style={{fontWeight: 'bold'}}>Semantic Reader Open Research Platform</span> provides resources that enable the broader research community to explore exciting challenges around novel research support tools: <span style={{fontWeight: 'bold'}}>PaperMage</span>, a library for processing and analyzing scholarly PDFs, and <span style={{fontWeight: 'bold'}}>PaperCraft</span>, a React UI component for building augmented and interactive reading interfaces. 
+              The <span className='bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-teal-500' style={{fontWeight: 'bold'}}>Semantic Reader Open Research Platform</span> provides resources that enable the broader research community to explore exciting challenges around novel research support tools: <span style={{fontWeight: 'bold'}}>PaperMage</span>, a library for processing and analyzing scholarly PDFs, and <span style={{fontWeight: 'bold'}}>PaperCraft</span>, a React UI component for building augmented and interactive reading interfaces. 
               Join us in designing the future of scholarly reading interfaces with our open source libraries!
 
               {/* We hope by providing these resources we can enable and encourage the broader research community to work on exciting novel intelligent reading interfaces for research papers with us. */}
