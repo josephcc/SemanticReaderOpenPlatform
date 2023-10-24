@@ -28,7 +28,7 @@ export default function Demos() {
             
 
             <div className="relative inline-block">
-            <Demo title="Threddy & Synergi" subtitle="Clipping Research Threads from Papers for Synthesis and Exploration" pillTypes={[PillType.VIDEO, PillType.PAPER]} people={[{name: 'Hyeonsu B. Kang', image: '/images/people/hyeonsu.png'}]} page='/Threddy'/>
+            <Demo title="Synergi & Threddy" subtitle="Clipping Research Threads from Papers for Synthesis and Exploration" pillTypes={[PillType.VIDEO, PillType.PAPER]} people={[{name: 'Hyeonsu B. Kang', image: '/images/people/hyeonsu.png'}]} page='/Synergi'/>
               <span style={{ fontSize: '0.65' }} className="absolute -top-2 -left-2 inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-600 ring-1 ring-inset ring-red-500/10 mr-1">NEW: UIST 2023</span>
             </div>
 
