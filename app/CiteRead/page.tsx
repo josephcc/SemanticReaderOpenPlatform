@@ -4,6 +4,9 @@ import Paper from "@/components/paper";
 import { fetchPapers } from "@/components/papers";
 import PersonLight from "@/components/personLight";
 
+import Image from "next/image";
+import SemanticReader from '@/public/images/semantic_reader_logo.svg'
+
 export const metadata = {
   title: 'CiteRead - Semantic Reader Open Research Platform',
   description: "CiteRead: Integrating Localized Citation Contexts into Scientific Paper Reading",
@@ -43,11 +46,33 @@ export default async function Home() {
                   </h3>
                   <p className="text-xl text-gray-600">
                     Open the following papers in CiteRead to see how it works!
+                    <br/>
+
+                    <a
+                      className='inline-flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
+                      href="https://citextreader.s3.us-west-2.amazonaws.com/demo/index.html?file=https://citextreader.s3.us-west-2.amazonaws.com/papers/90bd099501147609165971b27b5514a2b9c2a7e7.pdf#"
+                      target='_blank' rel='noreferrer'
+                    >
+                      <span className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
+                        <Image src={SemanticReader} alt="semantic reader Logo" style={{ height: '22px !important', width: 'auto' }} />
+                      </span>
+                      <span className="font-bold tracking-tight" style={{ margin: '0 16px' }}>Paper A: Serendipity. 2016.</span>
+                    </a>
+                    <br/>
+
+                    <a
+                      className='inline-flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
+                      href="https://citextreader.s3.us-west-2.amazonaws.com/demo/index.html?file=https://citextreader.s3.us-west-2.amazonaws.com/papers/3c76b9192e0828c87ce8d2b8aaee197d9700dd68.pdf#"
+                      target='_blank' rel='noreferrer'
+                    >
+                      <span className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
+                        <Image src={SemanticReader} alt="semantic reader Logo" style={{ height: '22px !important', width: 'auto' }} />
+                      </span>
+                      <span className="font-bold tracking-tight" style={{ margin: '0 16px' }}>Paper B: A New Chatbot for Customer Service on Social Media. 2017.</span>
+                    </a>
+
+
                   </p>
-                  <ul>
-                    <li>- <a href='https://citextreader.s3.us-west-2.amazonaws.com/demo/index.html?file=https://citextreader.s3.us-west-2.amazonaws.com/papers/90bd099501147609165971b27b5514a2b9c2a7e7.pdf#' target='_blank'>A New Chatbot for Customer Service on Social Media. Xu et al. 2017.</a></li>
-                    <li>- <a href='https://citextreader.s3.us-west-2.amazonaws.com/demo/index.html?file=https://citextreader.s3.us-west-2.amazonaws.com/papers/3c76b9192e0828c87ce8d2b8aaee197d9700dd68.pdf#' target='_blank'>Serendipity: Finger Gesture Recognition usingan Off-the-Shelf Smartwatch. Wen et al. 2016.</a></li>
-                  </ul>
                 </div>
 
                 <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">

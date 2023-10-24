@@ -107,7 +107,7 @@ const PlatformPeople: PersonType[] = [
   {
     name: 'Tal August',
     affiliation: 'University of Illinois at Urbana-Champaign',
-    title: 'Assitant Professor',
+    title: 'Assistant Professor',
     image: '/images/people/tal.jpg',
     website: 'https://talaugust.github.io/',
     twitter: 'https://twitter.com/tal_august'
@@ -149,8 +149,8 @@ const InterfacePeople: PersonType[] = [
   },
   {
     name: 'Tal August',
-    affiliation: 'Allen Institute for AI, Semantic Scholar',
-    title: 'Young Investigator',
+    affiliation: 'University of Illinois at Urbana-Champaign',
+    title: 'Assistant Professor',
     image: '/images/people/tal.jpg',
     website: 'https://talaugust.github.io/',
     twitter: 'https://twitter.com/tal_august'

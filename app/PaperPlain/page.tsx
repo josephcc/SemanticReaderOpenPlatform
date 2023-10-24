@@ -6,6 +6,8 @@ import Markdown, { Components } from 'react-markdown'
 import Paper from "@/components/paper";
 import { fetchPapers } from "@/components/papers";
 import PersonLight from "@/components/personLight";
+import Image from "next/image";
+import SemanticReader from '@/public/images/semantic_reader_logo.svg'
 
 const markdownHDowngrade: Partial<Components> = {
   h1(props) { return (<h3 {...props} />)},
@@ -64,7 +66,16 @@ export default async function Home() {
                     Interactive Demo
                   </h3>
                   <p className="text-xl text-gray-600">
-                    <a href='https://paper-plain.apps.allenai.org/reader/707201' target='_blank'>Play with the Paper Plain demo</a>
+                    <a
+                      className='inline-flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
+                      href="https://paper-plain.apps.allenai.org/reader/707201"
+                      target='_blank' rel='noreferrer'
+                    >
+                      <span className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
+                        <Image src={SemanticReader} alt="semantic reader Logo" style={{ height: '22px !important', width: 'auto' }} />
+                      </span>
+                      <span className="font-bold tracking-tight" style={{ margin: '0 16px' }}>Play with the Paper Plain demo</span>
+                    </a>
                   </p>
                 </div>
 

@@ -1,5 +1,6 @@
 
 
+import SemanticReader from '@/public/images/semantic_reader_logo.svg'
 import PersonLight from "@/components/personLight";
 
 import Image from "next/image";
@@ -45,12 +46,28 @@ export default async function Home() {
                     Interactive Demo
                   </h3>
                   <p className="text-xl text-gray-600">
-                    Explore the following papers with LLM:
+                    <a
+                      className='inline-flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
+                      href="https://s2-labs-paper-qa.allen.ai/reader/257766269/41/121?tid=OpenPlatform&userId=OpenPlatform"
+                      target='_blank' rel='noreferrer'
+                    >
+                      <span className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
+                        <Image src={SemanticReader} alt="semantic reader Logo" style={{ height: '22px !important', width: 'auto' }} />
+                      </span>
+                      <span className="font-bold tracking-tight" style={{ margin: '0 16px' }}>Paper A: The Semantic Reader Project Paper</span>
+                    </a>
+                    <br/>
+                    <a
+                      className='inline-flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
+                      href="https://s2-labs-paper-qa.apps.allenai.org/reader/256868353/1/0?tid=OpenPlatform&userId=OpenPlatform"
+                      target='_blank' rel='noreferrer'
+                    >
+                      <span className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
+                        <Image src={SemanticReader} alt="semantic reader Logo" style={{ height: '22px !important', width: 'auto' }} />
+                      </span>
+                      <span className="font-bold tracking-tight" style={{ margin: '0 16px' }}>Paper B: The CiteSee Paper</span>
+                    </a>
                   </p>
-                  <ul>
-                    <li>- <a href='https://s2-labs-paper-qa.allen.ai/reader/257766269/41/121?tid=OpenPlatform&userId=OpenPlatform' target='_blank'>The Semantic Reader Project: Augmenting Scholarly Documents through AI-Powered Interactive Reading Interfaces. Lo et al. 2023.</a></li>
-                    <li>- <a href='https://s2-labs-paper-qa.apps.allenai.org/reader/256868353/1/0?tid=OpenPlatform&userId=OpenPlatform' target='_blank'>CiteSee: Augmenting Citations in Scientific Papers with Persistent and Personalized Historical Context. Chang et al. 2023.</a></li>
-                  </ul>
                 </div>
 
                 <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
@@ -81,18 +98,3 @@ export default async function Home() {
     </div>
   )
 }
-
-// export async function getMarkdown(fullPath: string) {
-//     const fileContents = fs.readFileSync(fullPath, 'utf8');
-
-//     // Use gray-matter to parse the post metadata section
-//     const matterResult = matter(fileContents);
-
-//     // Use remark to convert markdown into HTML string
-//     const processedContent = await remark()
-//       .use(html)
-//       .process(matterResult.content);
-//     const contentHtml = processedContent.toString();
-
-//     return contentHtml
-// }

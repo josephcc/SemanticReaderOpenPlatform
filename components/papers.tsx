@@ -87,7 +87,7 @@ export default async function Papers() {
                   <li key={idx} className="flex justify-between gap-x-6 py-2">
                     <p className="text-s text-gray-600">
                       <Paper paper={paper} />
-                      {paper.externalIds.CorpusId === 256868353 ? <span style={{ fontWeight: 'bold' }}>🏆 Best Paper Award</span> : null}
+                      {paper.externalIds.CorpusId === 256868353 ? <span style={{ fontWeight: 'bold' }}><br/>🏆 Best Paper Award</span> : null}
                     </p>
                   </li>
                 )

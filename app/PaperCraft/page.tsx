@@ -33,15 +33,14 @@ const markdownHDowngrade: Partial<Components> = {
 
 
 export const metadata = {
-  title: 'PaperPlain - Semantic Reader Open Research Platform',
-  description: "PaperPlain - Semantic Reader Open Research Platform",
+  title: 'PaperCraft - Semantic Reader Open Research Platform',
+  description: "PaperCraft- Semantic Reader Open Research Platform",
 }
 
 export default async function Home() {
   const tutorialFp = path.join('app', 'PaperCraft', 'tutorial.md')
   // read from file and remove first heading
   const tutorialMd = (await fs.promises.readFile(tutorialFp, 'utf8')).trim().replace(/#[\w\W]+?\n+?/, "")
-  const paper = (await fetchPapers([257766269]))?.[0]
 
   return (
     <div style={{ marginTop: '100px' }}>
@@ -57,7 +56,8 @@ export default async function Home() {
             <div className="max-w-3xl mx-auto text-center pb-3 md:pb-5">
               <h1 className="h2 mb-4">PaperCraft</h1>
               <p className="text-xl text-gray-600 mb-4">
-                We provide PaperMage + PaperCraft for building intelligent and interactive paper readers. Below we showcase how to extract text from a PDF to prompt a LLM for term definitions and then visually augment the paper with highlights and popups.
+              Create an interactive reading experience for PDF's in your react application!
+              PaperCraft is used and maintained by the Semantic Scholar team to create Semantic Reader. It is built on top of React-PDF, with additional features for visual augmentations, interactivities, and performance improvements.
               </p>
             </div>
 
@@ -74,7 +74,7 @@ export default async function Home() {
                   <p className="text-xl text-gray-600">
                     <a
                       className='flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
-                      href="https://github.com/allenai/papermage" style={{ marginRight: '8px', flexGrow: 1 }}
+                      href="https://github.com/allenai/pdf-component-library" style={{ marginRight: '8px', flexGrow: 1 }}
                       target='_blank' rel='noreferrer'
                     >
                       <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
@@ -88,24 +88,13 @@ export default async function Home() {
                       href="https://www.semanticscholar.org/product/semantic-reader"
                       target='_blank' rel='noreferrer'
                     >
-                      <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
+                      <span className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
                         <Image src={SemanticReader} alt="arXiv Logo" style={{ height: '22px !important', width: 'auto' }} />
-                      </div>
-                      <div className="font-bold tracking-tight" style={{ margin: '0 16px' }}>Try Semantic Reader</div>
+                      </span>
+                      <span className="font-bold tracking-tight" style={{ margin: '0 16px' }}>Try Semantic Reader</span>
                     </a>
                   </p>
                 </div>
-
-                {paper && (
-                  <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
-                    <h3 className="h3 mb-3 mt-8" style={{ display: 'flex' }}>
-                      Publication
-                    </h3>
-                    <p className="text-xl text-gray-600">
-                      <Paper paper={paper} />
-                    </p>
-                  </div>
-                )}
 
                 <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
                   <h3 className="h3 mb-3 mt-8" style={{ display: 'flex' }}>
