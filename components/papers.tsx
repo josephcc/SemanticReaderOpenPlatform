@@ -87,17 +87,20 @@ export default async function Papers() {
                   <li key={idx} className="flex justify-between gap-x-6 py-2">
                     <p className="text-s text-gray-600">
                       <Paper paper={paper} />
-                      {paper.externalIds.CorpusId === 256868353 ? <span style={{ fontWeight: 'bold' }}><br/>🏆 Best Paper Award</span> : null}
                     </p>
                   </li>
                 )
               })}
             </ul>
+
             <h4 className="h4 mb-2 mt-8">Open Research Resources: Libraries, Models, Datasets</h4>
             <ul role="list" className="divide-y divide-gray-100">
               <li className="flex justify-between gap-x-6 py-2">
                 <p className="text-s text-gray-600">
-                  <span style={{fontWeight: 'bold'}}>PaperMage: A Unified Toolkit for Processing, Representing, and Manipulating Visually-Rich Scientific Documents</span>. Conference on Empirical Methods in Natural Language Processing: Demos. 2023. Kyle Lo, Zejiang Shen, Benjamin Newman, Joseph Chee Chang, Russell Authur, Erin Bransom, Stefan Candra, Yoganand Chandrasekhar, Regan Huff, Bailey Kuehl, Amanpreet Singh, Chris Wilhelm, Angele Zamarron, Marti A. Hearst, Daniel S. Weld, Doug Downey, Luca Soldaini.
+                  <span style={{ maxWidth: '640px', display: 'inline-block' }}>
+                      <a href={'https://github.com/allenai/papermage/blob/3781ae08a787f1b2e755a9eff69ec029a6749a8c/tests/fixtures/papermage.pdf'} target="_blank" style={{ fontWeight: 600 }}>
+                    PaperMage: A Unified Toolkit for Processing, Representing, and Manipulating Visually-Rich Scientific Documents</a><br/>Kyle Lo, Zejiang Shen, Benjamin Newman, Joseph Chee Chang, Russell Authur, Erin Bransom, Stefan Candra, Yoganand Chandrasekhar, Regan Huff, Bailey Kuehl, Amanpreet Singh, Chris Wilhelm, Angele Zamarron, Marti A. Hearst, Daniel S. Weld, Doug Downey, Luca Soldaini. Conference on Empirical Methods in Natural Language Processing: Demos. 2023.
+                  </span>
                 </p>
               </li>
               {resources && resources.map((paper, idx) => {
