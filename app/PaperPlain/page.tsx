@@ -1,28 +1,9 @@
-import path from "path";
-import fs from 'fs';
-
-// import dynamic from "next/dynamic";
-import Markdown, { Components } from 'react-markdown'
 import Paper from "@/components/paper";
 import { fetchPapers } from "@/components/papers";
 import PersonLight from "@/components/personLight";
 import Image from "next/image";
 import SemanticReader from '@/public/images/semantic_reader_logo.svg'
-
-const markdownHDowngrade: Partial<Components> = {
-  h1(props) { return (<h3 {...props} />)},
-  h2(props) { return (<h4 {...props} />)},
-  h3(props) { return (<h5 {...props} />)},
-  h4(props) { return (<h6 {...props} />)},
-  h5(props) { return (<h6 {...props} />)},
-  code(props) { return (
-    <code {...props} style={{fontSize: '0.8em', whiteSpace: 'pre-wrap', padding: '0 4px' }} />
-
-  )},
-  pre(props) { return (
-    <pre {...props} style={{ background: '#28264b', lineHeight: 1.25, padding: '8px' }} />
-  )}
-}
+import Tutorial from "./tutorial";
 
 
 export const metadata = {
@@ -31,9 +12,6 @@ export const metadata = {
 }
 
 export default async function Home() {
-  const tutorialFp = path.join('app', 'PaperPlain', 'tutorial.md')
-  // read from file and remove first heading
-  const tutorialMd = (await fs.promises.readFile(tutorialFp, 'utf8')).trim().replace(/#[\w\W]+?\n+?/,"")
   const paper = (await fetchPapers([247187606]))?.[0]
 
   return (
@@ -83,11 +61,8 @@ export default async function Home() {
                   <h3 className="h3 mb-3 mt-8" style={{ display: 'flex' }}>
                     How to build PaperPlain with PaperMage and PaperCraft
                   </h3>
-                  <article className="prose lg:prose-xl">
-                    Source code will be available soon.
-
-                    <Markdown components={markdownHDowngrade}>{tutorialMd}</Markdown>
-                  </article>
+                  <Tutorial />
+                  
                 </div>
 
 
@@ -114,17 +89,3 @@ export default async function Home() {
   )
 }
 
-// export async function getMarkdown(fullPath: string) {
-//     const fileContents = fs.readFileSync(fullPath, 'utf8');
-
-//     // Use gray-matter to parse the post metadata section
-//     const matterResult = matter(fileContents);
-
-//     // Use remark to convert markdown into HTML string
-//     const processedContent = await remark()
-//       .use(html)
-//       .process(matterResult.content);
-//     const contentHtml = processedContent.toString();
-
-//     return contentHtml
-// }
