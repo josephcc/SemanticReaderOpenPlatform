@@ -56,7 +56,7 @@ export default async function Home() {
                   <p className="text-xl text-gray-600">
                     <a
                       className='inline-flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
-                      href="https://papeo.app/demo"
+                      href="https://paper-video-nav.apps.allenai.org/reader/papeo_final"
                       target='_blank' rel='noreferrer'
                     >
                       <span className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
