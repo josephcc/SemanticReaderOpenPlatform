@@ -15,7 +15,7 @@ export default function Demos() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center pb-4 md:pb-9">
             <h2 className="h2 mb-4">Research Prototype Showcase</h2>
-            <p className="text-xl text-gray-600">Here we present several interactive demos to showcase systems you can build with PaperMage and the ComponentLibrary.</p>
+            <p className="text-xl text-gray-600">Here we present several interactive demos to showcase systems you can build with PaperMage and PaperCraft.</p>
           </div>
 
           {/* Items */}
