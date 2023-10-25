@@ -2,13 +2,13 @@ import Link from "next/link"
 import PersonLight from "./personLight"
 
 export enum PillType {
-  FOUNDING = 0,
-  DEMO = 1,
-  PRODUCT = 2,
-  SNIPPET = 3,
-  SOURCE = 5,
-  VIDEO = 6,
-  PAPER = 7,
+  FOUNDING,
+  DEMO,
+  PRODUCT,
+  SNIPPET,
+  PAPER,
+  VIDEO,
+  SOURCE,
 }
 
 interface PersonType {
@@ -45,28 +45,27 @@ const Demo: React.FC<PropType> = (props) => {
 }
 
 const pillStyles: React.CSSProperties = { fontSize: '0.65em' }
-const pillClassNames = (color: string) => `inline-flex items-center rounded-md px-1.5 py-0.5 text-xs  ring-1 ring-inset mr-0.5 ml-0.5 tracking-wide bg-${color}-50 text-${color}-600 text-${color}-700 ring-${color}-600/20 ring-${color}-700/10 ring-${color}-500/10`
 const pills = new Map<PillType, JSX.Element>();
 pills.set(PillType.DEMO, (
-  <span style={pillStyles} className={pillClassNames('blue')}>Demo</span>
+  <span style={pillStyles} className="inline-flex items-center rounded-md bg-blue-50 px-1.5 py-0.5 text-xs text-blue-700 ring-1 ring-inset ring-blue-700/10 mr-0.5 ml-0.5 tracking-wide text-light">Demo</span>
 ))
 pills.set(PillType.SNIPPET, (
-  <span style={pillStyles} className={pillClassNames('yellow')}>Tutorial</span>
+  <span style={pillStyles} className="inline-flex items-center rounded-md bg-yellow-50 px-1.5 py-0.5 text-xs text-yellow-800 ring-1 ring-inset ring-yellow-600/20 mr-0.5 ml-0.5 tracking-wide text-light">Code Tutorial</span>
 ))
 pills.set(PillType.PRODUCT, (
-  <span style={pillStyles} className={pillClassNames('purple')}>Deployed</span>
+  <span style={pillStyles} className="inline-flex items-center rounded-md bg-indigo-50 px-1.5 py-0.5 text-xs text-indigo-700 ring-1 ring-inset ring-indigo-700/10 mr-0.5 ml-0.5 tracking-wide text-light">In-Production</span>
 ))
 pills.set(PillType.PAPER, (
-  <span style={pillStyles} className={pillClassNames('green')}>Paper</span>
+  <span style={pillStyles} className="inline-flex items-center rounded-md bg-green-50 px-1.5 py-0.5 text-xs text-green-700 ring-1 ring-inset ring-green-600/20 mr-0.5 ml-0.5 tracking-wide text-light">Paper</span>
 ))
 pills.set(PillType.SOURCE, (
-  <span style={pillStyles} className={pillClassNames('indigo')}>Open Sourced</span>
+  <span style={pillStyles} className="inline-flex items-center rounded-md bg-indigo-50 px-1.5 py-0.5 text-xs text-indigo-700 ring-1 ring-inset ring-indigo-700/10 mr-0.5 ml-0.5 tracking-wide text-light">Source</span>
 ))
 pills.set(PillType.VIDEO, (
-  <span style={pillStyles} className={pillClassNames('gray')}>Presentation</span>
+  <span style={pillStyles} className="inline-flex items-center rounded-md bg-gray-50 px-1.5 py-0.5 text-xs text-gray-600 ring-1 ring-inset ring-gray-500/10 mr-0.5 ml-0.5 tracking-wide text-light">Presentation</span>
 ))
 pills.set(PillType.FOUNDING, (
-  <span style={pillStyles} className={pillClassNames('red')}>Founding Project</span>
+  <span style={pillStyles} className="inline-flex items-center rounded-md bg-red-50 px-1.5 py-0.5 text-xs text-red-600 ring-1 ring-inset ring-red-500/10 mr-0.5 ml-0.5 tracking-wide text-light">Founding Project</span>
 ))
 
 export default Demo;
