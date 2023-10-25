@@ -18,6 +18,7 @@ export default function Paper({paper}: {paper: PaperType}) {
     <span style={{ display: 'inline-block' }}>
       {paper.externalIds.CorpusId === 256868353 ? <span style={{ fontWeight: 'bold' }}>🏆 Best Paper Award<br /></span> : null}
       <a href={`https://www.semanticscholar.org/paper/${paper.paperId}`} target="_blank" style={{ fontWeight: 600 }}>{paper.title}</a><br/>{paper.authors.map((author) => author.name).join(', ')}. {venue}{paper.year}.
+      {paper.externalIds.CorpusId === 247187606 ? <span> Presentation at CHI 2024.</span> : null}
     </span>
   )
 
