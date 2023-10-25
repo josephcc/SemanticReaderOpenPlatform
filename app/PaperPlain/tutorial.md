@@ -1,48 +1,16 @@
 # Paper Plain Demo
 
-This is a short doc explaining the features of the Paper Plain demo. It includes examples of how the demo UI is implemented with the [pdf-components library](https://github.com/allenai/pdf-component-library) and how the demo processes PDFs with the [papermage library](https://github.com/allenai/papermage). Both libraries are publicly avaliable. 
+This is a short doc explaining the features of the PaperPlain demo. It includes examples of how the demo UI is implemented with [PaperCraft](https://github.com/allenai/pdf-component-library)) and how the demo processes PDFs with the [PaperMage library](https://github.com/allenai/papermage). Both libraries are publicly avaliable. 
 
-The majority of this readme will be describing PDF processing and custom react UI components built using the pdf-components library. 
-
-
-## Getting Started
-
-Install by executing `npm install @allenai/pdf-components`.
-Refer to the `ui/demo` directory for examples of how to import the components.
-
-
-### Running the Demo Locally
-To start a version of the application locally for development purposes, run
-this command:
-
-```bash
-~ docker-compose up --build
-```
-
-This process launches 3 services, the `ui`, `proxy` responsible
-for forwarding traffic to the appropriate services, and an `api`. You'll see output
-from each.
-
-It might take a minute or two for your application to start, particularly
-if it's the first time you've executed this command. Be patience and wait
-for a clear message indicating that all of the required services have
-started up.
-
-As you make changes the running application will be automatically updated.
-Simply refresh your browser to see them.
-
-Sometimes one portion of your application will crash due to errors in the code.
-When this occurs resolve the related issue and re-run `docker-compose up --build`
-to start things back up.
-
+The majority of this readme will be describing PDF processing and custom react UI components built using these two libraries. 
 
 ## Processing PDFs with papermage
 
-Papermage offers a unified interface for processing and analyzing PDF documents. In the example below we assume the PDF has already been processed into a papermage `Document` object. For instructions on processing a PDF, refer to the [papermage library](https://github.com/allenai/papermage). 
+PaperMage offers a unified interface for processing and analyzing PDF documents. In the example below we assume the PDF has already been processed into a papermage `Document` object. For instructions on processing a PDF, refer to the [PaperMage library](https://github.com/allenai/papermage). 
 
-Here is an example of how to get information on section headers and text (for rendering the section summaries).  
+Here is an example of how to get information on section headers and text (for rendering summaries of sections).  
 
-```
+```python
 def get_section_header_text(doc, corpusId):
     
     sections = []
@@ -65,9 +33,9 @@ def get_section_header_text(doc, corpusId):
     return sections
 ```
 
-For terms, we need to iterate over all text in the document, identifying if that word occurs in a dictionary of definitions 
+Here is an example of identifying terms in a paper to define them. For terms we need to iterate over all text in the document, identifying if that word occurs in a dictionary of definitions 
 
-```
+```python
 def getTerms(doc, corpusId):
     # assuming we have a dictionary of terms with their definitions
     # defs_full_indexed = ....
@@ -82,9 +50,9 @@ def getTerms(doc, corpusId):
   return annotations
 ```
 
-## Custom UI Components 
+## Custom UI Components with PaperCraft
 
-The main component running the Paper Plain demo is `Reader` (in `ui/demo/components/Reader.tsx`), which is adapted from the pdf-components library [Reader](https://github.com/allenai/pdf-component-library/blob/main/ui/demo/components/Reader.tsx). The pdf-components library describes this in more detail, but the overall set up of the reader is a `DocumentWrapper` with `PageWrapper` and `Overlay` components for each page. Any additional functionality at the page level goes within that page's  `PageWrapper`. Any functionality meant to operate over the entire document (such as Key questions or an outline) goes within the `DocumentWrapper`. The setup of the reader looks like this:
+PaperCraft provides multiple components to get started building a pdf reader. The main component running the PaperPlain demo is `Reader`, which is adapted from the PaperCraft [Reader](https://github.com/allenai/pdf-component-library/blob/main/ui/demo/components/Reader.tsx). The pdf-components library describes this in more detail, but the overall set up of the reader is a `DocumentWrapper` with `PageWrapper` and `Overlay` components for each page. Any additional functionality at the page level goes within that page's  `PageWrapper`. Any functionality meant to operate over the entire document (such as PaperPlain's key questions or an outline) goes within the `DocumentWrapper`. The setup of the reader looks like this:
 
 ```html
 <div className="reader__container">
@@ -111,17 +79,18 @@ The main component running the Paper Plain demo is `Reader` (in `ui/demo/compone
 </div>
 ```
 
+Below we cover how to build some of the components for PaperPlain
 
 ### Key Questions Drawer
-Paper Plain provides a curated set of key questions the reader might ask of the paper. Each question includes a brief generated plain language answer, pointers to passages in the paper where the reader can read more, and plain language summaries of the answering passages. 
+PaperPlain provides a curated set of key questions the reader might ask of the paper. Each question includes a brief generated plain language answer, pointers to passages in the paper where the reader can read more, and plain language summaries of the answering passages. 
 
 The key questions are made up of two components: `KeyQuestionOutline` and  `KeyQuestionItem`.
 
 #### KeyQuestionOutline
 
-`KeyQuestionOutline` represents the drawer that holds the key questions. It uses the [antd drawer component](https://ant.design/components/drawer). The outline requires a showing/hiding context from the `PaperPlainHeaderContext` context header. It takes an array of `KeyQuestionOutput` provided by the API and renders them as `KeyQuestionItems`. Key questions and answers are generated by `get_all_key_questions()` in `api/docParsing.py` and returned to the UI through the `/api/fulltext` endpoint. In `Reader.tsx`:
+`KeyQuestionOutline` represents the drawer that holds the key questions. It uses the [antd drawer component](https://ant.design/components/drawer). It takes an array of `KeyQuestionOutput` provided by the API and renders them as `KeyQuestionItems`. In `Reader.tsx`:
 
-```js
+```typescript
 React.useEffect(() => {
     fetch('/api/fulltext?corpusId=<yourCorpusID>', {})
       .then(response => response.json())
@@ -132,9 +101,7 @@ React.useEffect(() => {
 ```
 
 The component takes a parentRef to mount to and a list of `KeyQuestionOutput`. In `Reader.tsx`:
-```html
-Reader.tsx
-
+```typescript
 <div className="reader__container">
     <DocumentWrapper>
       ...
@@ -147,9 +114,9 @@ Reader.tsx
 ```
 #### KeyQuestionItem
 
-Handles clicks on individual key questions and links to sections of the paper. Each key question takes a `KeyQuestionOutput` and renders the information into the `KeyQuestionOutline`. Note that this does not render the answer sections, but links answer sections expecting them to already exist in the paper. Linking is done using `scrollToId` from the components library. In `KeyQuestionItem.tsx`:
+For each key question, a `KeyQuestionItem` handles clicks on individual key questions and links to sections of the paper. Each key question takes a `KeyQuestionOutput` and renders the information into the `KeyQuestionOutline`. Note that this does not render the answer sections, but links answer sections expecting them to already exist in the paper. Linking is done using `scrollToId` from the PaperCraft library. In `KeyQuestionItem.tsx`:
 
-```
+```typescript
 import { scrollToId } from '@allenai/pdf-components';
 
 const handleClick = React.useCallback((answer: AnswerSectionOutput) => {
@@ -159,7 +126,7 @@ const handleClick = React.useCallback((answer: AnswerSectionOutput) => {
 
 ### Annotations
 
-Paper plain provides three types of annotations that are overlayed over the paper using the `AnnotationOverlay` component. All annotation components consist of one or more [BoundingBox](https://github.com/allenai/pdf-component-library/blob/main/ui/library/src/components/BoundingBox.tsx) from the `pdf-components` library and a [Popover](https://ant.design/components/popover) component from `antd`.
+PaperPlain provides three types of annotations that are overlayed on the paper using the `AnnotationOverlay` component. All annotation components consist of one or more [BoundingBoxes](https://github.com/allenai/pdf-component-library/blob/main/ui/library/src/components/BoundingBox.tsx) from the PaperCraft library and a [Popover](https://ant.design/components/popover) component from `antd`.
 
 All annotations are rendered in the `AnnotationOverlay` component.
 
@@ -169,7 +136,7 @@ All annotations are rendered in the `AnnotationOverlay` component.
 The `AnswerPopover` component represents that answers to the key questions in the document. These annotations are hidden by default, and only activated when the user clicks on the associated key question link to the answer. The hiding and showing is controlled by the `AnswerContext` component (in `ui/demo/context/AnswerContext.tsx`), which saves the most recently clicked `KeyQuestionItem` answer. 
 
 In `AnnotationOverlay.tsx`:
-```
+```typescript
 import { AnswerContext } from '../context/AnswerContext';
 ...
 export const AnnotationsOverlay: React.FunctionComponent<Props> = ({
@@ -214,8 +181,7 @@ export const AnnotationsOverlay: React.FunctionComponent<Props> = ({
 
 In `AnswerPopover.tsx`:
 
-```
-
+```typescript
 return (
 <React.Fragment>
       <Popover
@@ -230,32 +196,29 @@ return (
 
 
 
-#### SectionSummaryPopover 
+#### SectionSummaryPopover and TermPopover
 
-Annotations at the top of each subsection. These are all active by default. Generated by `get_section_header_text()` in `api/docParsing.py`. Section Summary annotations render a unique icon (rather than the standard blue dotted underlined bounding box). To render this icon, the component uses a modified bounding box component, `SectionSummaryFlag`. The main difference between `SectionSummaryFlag` and the original `BoundingBox` is that `SectionSummaryFlag` passes renders any children component, which allows `SectionSummaryPopover` to pass through an icon to be rendered. In `SectionSummaryPopover.tsx`:
+Section summaries and term definitions both work as annotations over the document and are active by default. An example of rendering a term definition in the paper (provided by the `getTerms()`) would look like this:
 
-```
-<Popover
+```typescript
+return (
+    // Create a BoundingBox/Popover pair for each definition.
+    <Popover
+      // Passing this ref mounts the popover "inside" the scrollable content area
+      // instead of using the entire browser height.
       getPopupContainer={() => parentRef.current}
-      content={renderPopoverContent}
+      content={renderPopoverContent} // will render the definition from getTerms()
       trigger="click"
       onVisibleChange={handleVisibleChange}>
-      <SectionSummaryFlag
+      <BoundingBox
         className={classNames('reader__popover__bbox', isPopoverVisible ? 'selected' : '')}
-        page={summary.boundingBox.page}
-        top={summary.boundingBox.top}
-        left={summary.boundingBox.left}
-        height={summary.boundingBox.height}
-        width={summary.boundingBox.width}
-        isHighlighted={true}>
-        <QuestionCircleTwoTone></QuestionCircleTwoTone> // passing through a icon to be rendered in the bounding box
-      </SectionSummaryFlag>
+        page={term.boundingBox.page}
+        top={term.boundingBox.top}
+        left={term.boundingBox.left}
+        height={term.boundingBox.height}
+        width={term.boundingBox.width}
+        isHighlighted={true}></BoundingBox>
     </Popover>
+  );
 ```
-
-#### TermPopover
-
-Annotations on individual terms. Term definitions operate similarly to the section summaries, but operate over individual words or phrases. Generated by `getTerms()` in `api/terms.py`.
-
-
 
