@@ -54,7 +54,7 @@ def getTerms(doc, corpusId):
 
 PaperCraft provides multiple components to get started building a pdf reader. The main component running the PaperPlain demo is `Reader`, which is adapted from the PaperCraft [Reader](https://github.com/allenai/pdf-component-library/blob/main/ui/demo/components/Reader.tsx). The pdf-components library describes this in more detail, but the overall set up of the reader is a `DocumentWrapper` with `PageWrapper` and `Overlay` components for each page. Any additional functionality at the page level goes within that page's  `PageWrapper`. Any functionality meant to operate over the entire document (such as PaperPlain's key questions or an outline) goes within the `DocumentWrapper`. The setup of the reader looks like this:
 
-```html
+```tsx
 <div className="reader__container">
   <YourContextProvider> // used for any context needed throughout the reader
       <DocumentWrapper
@@ -90,7 +90,7 @@ The key questions are made up of two components: `KeyQuestionOutline` and  `KeyQ
 
 `KeyQuestionOutline` represents the drawer that holds the key questions. It uses the [antd drawer component](https://ant.design/components/drawer). It takes an array of `KeyQuestionOutput` provided by the API and renders them as `KeyQuestionItems`. In `Reader.tsx`:
 
-```typescript
+```tsx
 React.useEffect(() => {
     fetch('/api/fulltext?corpusId=<yourCorpusID>', {})
       .then(response => response.json())
@@ -101,7 +101,7 @@ React.useEffect(() => {
 ```
 
 The component takes a parentRef to mount to and a list of `KeyQuestionOutput`. In `Reader.tsx`:
-```typescript
+```tsx
 <div className="reader__container">
     <DocumentWrapper>
       ...
