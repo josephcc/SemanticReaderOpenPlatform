@@ -44,15 +44,27 @@ export default async function Home() {
                     Interactive Demo
                   </h3>
                   <p className="text-xl text-gray-600">
+                    Try out the Paper Plain demo on the following papers:<br />
                     <a
                       className='inline-flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
-                      href="https://paper-plain.apps.allenai.org/reader/707201"
+                      href="https://paper-plain.apps.allenai.org/reader/263912370"
                       target='_blank' rel='noreferrer'
                     >
                       <span className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
                         <Image src={SemanticReader} alt="semantic reader Logo" style={{ height: '22px !important', width: 'auto' }} />
                       </span>
-                      <span className="font-bold tracking-tight" style={{ margin: '0 16px' }}>Play with the Paper Plain demo</span>
+                      <span className="font-bold tracking-tight" style={{ margin: '0 16px' }}>Paper: Pan-cancer spatially resolved single-cell analysis reveals the crosstalk between cancer-associated fibroblasts and tumor microenvironment. 2023.</span>
+                    </a>
+                    <br />
+                    <a
+                      className='inline-flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
+                      href="https://paper-plain.apps.allenai.org/gallery"
+                      target='_blank' rel='noreferrer'
+                    >
+                      <span className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
+                        <Image src={SemanticReader} alt="semantic reader Logo" style={{ height: '22px !important', width: 'auto' }} />
+                      </span>
+                      <span className="font-bold tracking-tight" style={{ margin: '0 16px' }}>See additional papers with Paper Plain enabled</span>
                     </a>
                   </p>
                 </div>
