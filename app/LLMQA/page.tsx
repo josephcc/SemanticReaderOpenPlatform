@@ -1,10 +1,10 @@
 
-
 import SemanticReader from '@/public/images/semantic_reader_logo.svg'
 import PersonLight from "@/components/personLight";
 
 import Image from "next/image";
 import demo from '@/public/images/demos/QA.png'
+import Tutorial from './tutorial';
 
 export const metadata = {
   title: 'Explore Paper with QA - Semantic Reader Open Research Platform',
@@ -82,7 +82,9 @@ export default async function Home() {
 
 
                     this code but with more comments
+
                   </p>
+                  <Tutorial />
                 </div>
 
 
