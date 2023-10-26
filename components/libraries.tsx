@@ -164,13 +164,13 @@ export default function Libraries() {
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8" style={{ display: 'flex' }}>
                 <a
                   className='flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
-                  href="https://github.com/allenai/papermage" style={{ marginRight: '8px', flexGrow: 1 }}
+                  href="https://github.com/allenai/papermage/blob/3781ae08a787f1b2e755a9eff69ec029a6749a8c/examples/quick_start_demo.ipynb" style={{ marginRight: '8px', flexGrow: 1 }}
                   target='_blank' rel='noreferrer'
                 >
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0">
                     <Image src={Github} alt="Github Logo" style={{ height: '32px !important', width: 'auto' }} />
                   </div>
-                  <div className="font-bold tracking-tight" style={{ marginLeft: '16px' }}>Source Code</div>
+                  <div className="font-bold tracking-tight" style={{ marginLeft: '16px' }}>Source Code + Tutorial</div>
                 </a>
                 <a
                   className='relative inline-block flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
