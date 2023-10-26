@@ -1,10 +1,10 @@
 # Paper Plain Demo
 
-This is a short doc explaining the features of the PaperPlain demo. It includes examples of how the demo UI is implemented with [PaperCraft](https://github.com/allenai/pdf-component-library)) and how the demo processes PDFs with the [PaperMage library](https://github.com/allenai/papermage). Both libraries are publicly avaliable. 
+This is a short doc explaining the features of the PaperPlain demo. It includes examples of how the demo UI is implemented with [PaperCraft](https://github.com/allenai/pdf-component-library) and how the demo processes PDFs with [PaperMage](https://github.com/allenai/papermage). Both libraries are publicly avaliable. 
 
 The majority of this readme will be describing PDF processing and custom react UI components built using these two libraries. 
 
-## Processing PDFs with papermage
+## Processing PDFs with PaperMage
 
 PaperMage offers a unified interface for processing and analyzing PDF documents. In the example below we assume the PDF has already been processed into a papermage `Document` object. For instructions on processing a PDF, refer to the [PaperMage library](https://github.com/allenai/papermage). 
 
@@ -19,7 +19,7 @@ def get_section_header_text(doc, corpusId):
     # the easiest way of identifying section headers is to iterate over all rows in the document,
     # checking if each row contains a section header
     for r in doc.rows:
-        # rows contain a list of sections, the represent any section titles on that row
+        # rows contain a list of sections that represent any section titles on that row
         if len(r.sections) > 0:
             # if this is a new section, add the previous section along with the running text of that section
             if current_header != None:
@@ -198,7 +198,7 @@ return (
 
 #### SectionSummaryPopover and TermPopover
 
-Section summaries and term definitions both work as annotations over the document and are active by default. An example of rendering a term definition in the paper (provided by the `getTerms()`) would look like this:
+Section summaries and term definitions both work as annotations over the document and are active by default. An example of rendering a term definition in the paper (provided by `getTerms()`) would look like this:
 
 ```typescript
 return (
