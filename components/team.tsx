@@ -32,17 +32,21 @@ export default function Team() {
         <Institutions />
 
         <div>
-          <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Research Libraries and Tooling</h4>
+          <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Research Advisory Board</h4>
+          <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
+            <PersonShuffleList people={AdvisorPeople} />
+          </div>
+          <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Scientific Document Processing Research</h4>
           <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-4 items-start md:max-w-2xl lg:max-w-none">
-            <PersonShuffleList people={PlatformPeople} />
+            <PersonShuffleList people={Mages} />
           </div>
           <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Intelligent Reading Interfaces Research</h4>
           <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-4 items-start md:max-w-2xl lg:max-w-none">
             <PersonShuffleList people={InterfacePeople} />
           </div>
-          <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Research Advisory Board</h4>
-          <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
-            <PersonShuffleList people={AdvisorPeople} />
+          <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Research Libraries and Tooling</h4>
+          <div className="max-w-sm mx-auto grid md:grid-cols-2 lg:grid-cols-5 items-start md:max-w-2xl lg:max-w-none">
+            <PersonShuffleList people={PlatformPeople} />
           </div>
         </div>
       </div>
@@ -50,7 +54,7 @@ export default function Team() {
   )
 }
 
-const PlatformPeople: PersonType[] = [
+const Mages: PersonType[] = [
   {
     name: 'Joseph Chee Chang',
     image: '/images/people/joseph.jpg',
@@ -83,6 +87,41 @@ const PlatformPeople: PersonType[] = [
     website: 'https://www.szj.io/',
     twitter: 'https://twitter.com/shannonzshen'
   },
+]
+
+const PlatformPeople: PersonType[] = [
+  // {
+  //   name: 'Joseph Chee Chang',
+  //   image: '/images/people/joseph.jpg',
+  //   affiliation: 'Allen Institute for AI, Semantic Scholar',
+  //   website: 'https://joe.cat',
+  //   twitter: 'https://twitter.com/josephcc',
+  //   title: 'Research Scientist'
+  // },
+  // {
+  //   name: 'Kyle Lo',
+  //   image: '/images/people/kyle.jpg',
+  //   affiliation: 'Allen Institute for AI, Semantic Scholar',
+  //   website: 'https://kyleclo.github.io/',
+  //   twitter: 'https://twitter.com/kylelostat',
+  //   title: 'Research Scientist'
+  // },
+  // {
+  //   name: 'Luca Soldaini',
+  //   title: 'Research Scientist',
+  //   affiliation: 'Allen Institute for AI, Semantic Scholar',
+  //   image: '/images/people/luca.jpg',
+  //   website: 'https://soldaini.net/',
+  //   twitter: 'https://twitter.com/soldni'
+  // },
+  // {
+  //   name: 'Shannon Shen',
+  //   image: '/images/people/shannon.jpg',
+  //   affiliation: 'Massachusetts Institute of Technology',
+  //   title: 'Doctoral Student',
+  //   website: 'https://www.szj.io/',
+  //   twitter: 'https://twitter.com/shannonzshen'
+  // },
   {
     name: 'Smita Rao',
     title: 'Engineering Manager',
@@ -104,13 +143,55 @@ const PlatformPeople: PersonType[] = [
     affiliation: 'Allen Institute for AI, Semantic Scholar',
     website: 'https://www.linkedin.com/in/chloe-anastasiades/'
   },
+  // {
+  //   name: 'Tal August',
+  //   affiliation: 'University of Illinois at Urbana-Champaign',
+  //   title: 'Assistant Professor',
+  //   image: '/images/people/tal.jpg',
+  //   website: 'https://talaugust.github.io/',
+  //   twitter: 'https://twitter.com/tal_august'
+  // },
   {
-    name: 'Tal August',
-    affiliation: 'University of Illinois at Urbana-Champaign',
-    title: 'Assistant Professor',
-    image: '/images/people/tal.jpg',
-    website: 'https://talaugust.github.io/',
-    twitter: 'https://twitter.com/tal_august'
+    name: 'Caroline Paulic',
+    title: 'Software Engineer',
+    image: '/images/people/caroline.jpeg',
+    affiliation: 'Allen Institute for AI, Semantic Scholar',
+  },
+  {
+    name: 'Huy Tran',
+    title: 'Software Engineer',
+    image: '/images/people/huy.jpeg',
+    affiliation: 'Allen Institute for AI, Semantic Scholar',
+  },
+  {
+    name: 'YenSung Chen',
+    title: 'Software Engineer',
+    image: '/images/people/yensung.png',
+    affiliation: 'Allen Institute for AI, Semantic Scholar',
+  },
+  {
+    name: 'Paul Sayre',
+    title: 'Software Engineer',
+    image: '/images/people/paul.jpeg',
+    affiliation: 'Allen Institute for AI, Semantic Scholar',
+  },
+  {
+    name: 'Eric Marsh',
+    title: 'Software Engineer',
+    image: '/images/people/eric.jpg',
+    affiliation: 'Allen Institute for AI, Semantic Scholar',
+  },
+  {
+    name: 'Ngoc-Uyen Nguyen',
+    title: 'Software Engineer',
+    image: '/images/people/cecile.jpeg',
+    affiliation: 'Allen Institute for AI, Semantic Scholar',
+  },
+  {
+    name: 'Sam Skjonsberg',
+    title: 'Engineering Manager',
+    image: '/images/people/sam.jpeg',
+    affiliation: 'Allen Institute for AI, Semantic Scholar',
   },
 ]
 
