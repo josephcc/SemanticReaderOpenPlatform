@@ -5,6 +5,7 @@ import PersonLight from "@/components/personLight";
 import Image from "next/image";
 import demo from '@/public/images/demos/QA.png'
 import Tutorial from './tutorial';
+import Link from 'next/link';
 
 export const metadata = {
   title: 'Explore Paper with QA - Semantic Reader Open Research Platform',
@@ -72,19 +73,22 @@ export default async function Home() {
 
                 <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
                   <h3 className="h3 mb-3 mt-8" style={{ display: 'flex' }}>
-                    How to build Paper Q&A using PaperMage and PaperCraft
+                    How to build a Paper Q&A backend using PaperMage
                   </h3>
-                  <p className="text-xl text-gray-600">
-                    Coming soon..
-
-                    <a href='https://github.com/allenai/papermage/pull/52/files' target='_blank'>https://github.com/allenai/papermage/pull/52/files</a>
-
-
-
-                    this code but with more comments
+                  <p className="text-xl text-gray-600 mb-4">
+                    Here, we demostrate how to implement an attributed QA application using PaperMage. The below example is a custom PaperMage Predictor, that prompts an LLM with the full text of a paper plus an question about the paper from a user. In the prompt, the Predictor instructs the LLM to generate concise answer based on the content of the papper, along with a list of quotes from the paper as supporting evidence. Please follow the below code snippets and comments to see how everything works.
 
                   </p>
                   <Tutorial />
+                </div>
+
+                <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
+                  <h3 className="h3 mb-3 mt-8" style={{ display: 'flex' }}>
+                    How to build a Paper Q&A frontend with PaperCraft 
+                  </h3>
+                  <p className="text-xl text-gray-600 mb-12">
+                    The frontend of this demo included a sidebar that contaned the answer and a list of supporting evidence, and a rendered PDF in the main view. Two interactions are supported: when the user clicked on a supporting evidence, the PDF will 1) <em>scroll to</em> the area where the evidence is located and 2) highlight the corresponding text in blue. These interactions were also part of PaperPlain prototype, so please refer to the <Link href='/PaperPlain'>PaperPlain tutorial</Link> to see how to implement them in the frontend with PaperCraft.
+                  </p>
                 </div>
 
 
