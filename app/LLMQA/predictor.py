@@ -1,15 +1,13 @@
-from typing import List, Set
+from typing import List
 
-import numpy as np
-import pysbd
-from tokreate import CallAction, ParseAction
+import pysbd    # for splitting sentences
+from tokreate import CallAction, ParseAction    # for callling LLMs
 
 from papermage.magelib import Document, Entity, ParagraphsFieldName, SentencesFieldName
 from papermage.predictors import BasePredictor
 
-from .utils_paper_qa.hashing import create_hash, int_to_bin, similarity
 
-FULL_DOC_QA_ATTRIBUTED_PROMPT = """\
+FULL_DOC_QA_ATTRIBUTED_PROMPT = '''
 Answer a question using the provided scientific paper.
 Your response should be a JSON object with the following fields:
   - answer: The answer to the question. The answer should use concise language, but be comprehensive. Only provide answers that are objectively supported by the text in paper.
@@ -17,106 +15,138 @@ Your response should be a JSON object with the following fields:
 If there is no answer, return an empty dictionary, i.e., `{}`.
 Paper:
 {{ full_text }}
-Given the information above, please answer the question: "{{ question }}"."""
+Given the information above, please answer the question: "{{ question }}".
+'''
 
-FULL_DOC_QA_SYSTEM_JSON_PROMPT = """\
+FULL_DOC_QA_SYSTEM_JSON_PROMPT = '''
 You are a helpful research assistant, answering questions about scientific papers accurately and concisely.
 You ONLY respond to questions that have an objective answer, and return an empty response for subjective requests.
-You always return a valid JSON object to each user request."""
+You always return a valid JSON object to each user request.
+'''
 
 
 class PaperQaPredictor(BasePredictor):
-    def __init__(self, model_name: str = "gpt-3.5-turbo-16k", max_tokens: int = 2048):
+    """Predictor to perform attributed QA on scientific papers.
+
+    Given a paper and a question, this predictor is designed to return an
+    answer + supporting evidence in the form of excerpts from the paper.
+    Under the hood, it uses a language model to generate a response in JSON
+    format, and match the response to sentences in the paper.
+    """
+
+    def __init__(
+        self,
+        model_name: str = "gpt-3.5-turbo-16k",
+        max_tokens: int = 2048,
+        temperature: float = 0.3,
+        task_prompt: str = FULL_DOC_QA_ATTRIBUTED_PROMPT,
+        system_prompt: str = FULL_DOC_QA_SYSTEM_JSON_PROMPT,
+    ):
+        """Create a predictor to support attributed QA on scientific papers.
+
+        Args:
+            model_name (str, optional): The name of the model to use.
+                Defaults to "gpt-3.5-turbo-16k". Anthropic, OpenAI, and
+                TogetherAI models are supported.
+            max_tokens (int, optional): The maximum number of tokens to use
+                when generating a response. Defaults to 2048.
+            temperature (float, optional): The temperature to use when
+                generating a response. Lower temperatures will result in
+                less creative responses, facilitating attribution. Defaults
+                to 0.3.
+        """
+
+        # This chain of tokreate actions is responsible for calling the LLM
+        # to get an answer and perform attribution, as well as parsing the
+        # response into a JSON object.
         self.call = CallAction(
-            prompt=FULL_DOC_QA_ATTRIBUTED_PROMPT,
-            system=FULL_DOC_QA_SYSTEM_JSON_PROMPT,
+            prompt=task_prompt.strip(),
+            system=system_prompt.strip(),
             model=model_name,
-            parameters={"max_tokens": max_tokens},
+            parameters={"max_tokens": max_tokens, "temperature": temperature},
         ) >> ParseAction(name="json_parser", parser="json.loads")
+
+        # the sentencizer will be used to split the response into sentences
+        # in case one or more attribution spans are comprised of multiple
+        # sentences.
         self.sentencizer = pysbd.Segmenter(language="en", clean=False)
 
     @property
     def REQUIRED_DOCUMENT_FIELDS(self) -> List[str]:
+        """This predictor requires paragraphs and sentences to be
+        attached to the document."""
         return [ParagraphsFieldName, SentencesFieldName]
 
-    def merge_adjacent_sentences(self, locs: List[int], slack: int = 1, max_len: int = 3) -> List[List[int]]:
-        """Merge adjacent sentences that are within a certain distance of each other."""
-        seen: Set[int] = set()
-        grouped: List[List[int]] = []
-        end_pos = len(locs) - 1
-        for i in range(len(locs)):
-            init_pos = locs[i]
-            if init_pos in seen:
-                grouped.append([])
-            elif i < end_pos:
-                for j in range(i + 1, len(locs)):
-                    curr_pos, prev_pos = locs[j], locs[j - 1]
-                    if (curr_pos - prev_pos) > slack or (curr_pos - init_pos) >= max_len or j == end_pos:
-                        new_pos = list(range(init_pos, prev_pos + 1))
-                        grouped.append(new_pos)
-                        seen.update(new_pos)
-                        break
-            else:
-                grouped.append([init_pos])
-                seen.add(init_pos)
-
-        return grouped
-
-    def predict(self, doc: Document, *args, **kwargs) -> List[Entity]:
-        # TODO: fix base predictor so that it can handle questions
-        self._doc_field_checker(doc)
-        return self._predict(doc, *args, **kwargs)
-
-    def _predict(self, doc: Document, question: str) -> List[Entity]:  # type: ignore
+    def _predict(self, doc: Document, question: str) -> List[Entity]:
         full_text = ""
-        sentences_vecs = []
-        sentences_ids = []
+        sents_text = []
+        sents_ids = []
 
-        # build full text representation and hash sentences for similarity
-        for i, paragraph in enumerate(doc.paragraphs):  # type: ignore
+        # Before we can call the LLM, we need a flat textual representation
+        # of the document to provide during API call.
+        # As we are iterating over the sentences, we also create a vector
+        for i, paragraph in enumerate(doc.paragraphs):
+
+            # we check if the paragraph has a header, and if so, we add it
+            # to to the full text representation of the document.
             header = getattr(paragraph.metadata, "header_text", None)
             for j, sent in enumerate(paragraph.sentences):
-                if j == 0 and (header := getattr(sent.metadata, "header_text", header)):
-                    # add a header if it exists
+                if j == 0 and header:
+                    # add header before first sentence if it exists
                     full_text += f"\n\n## {header}\n"
                 else:
                     full_text += "\n\n"
 
                 full_text += f"{sent.text.strip()} "
-                sentences_vecs.append(int_to_bin(create_hash(sent.text)))
-                sentences_ids.append((i, j))
-            full_text.strip()
-        sentences_array = np.vstack(sentences_vecs)
 
+                # We need to keep track of the original sentence text and id
+                # so that if the LLM returns a span corresponding to this
+                # sentence, we can return the entity matching it.
+                sents_ids.append((i, j))
+                sents_text.append(sent.text.strip())
+            full_text.strip()
+
+        # here, we call the LLM to get an answer and attribution;
+        # the tokreate chain returns a history of calls, and the output
+        # we need is the last one.
         *_, output = self.call.run(full_text=full_text, question=question)
         parsed_output = output.state["json_parser"]
+
+        # this is the abstractive answer returned by the LLM in response
+        # to the question.
+        answer = parsed_output["answer"]
 
         if not parsed_output:
             # the model could not answer the question
             return []
 
-        excerpts = [s for e in parsed_output.get("excerpts", []) for s in self.sentencizer.segment(e)]
-
-        if not excerpts:
-            # the model could not find supporting evidence
-            return []
-
-        encoded_context = np.vstack([int_to_bin(create_hash(e)) for e in excerpts])
-        similarities = similarity(queries=encoded_context, targets=sentences_array)
-        grouped_locs = self.merge_adjacent_sentences(np.argmax(similarities, axis=1))
+        # we parse out sentences in each excerpt returned by the LLM in
+        # support of the provided answer.
+        excerpts = [
+            s for e in parsed_output.get("excerpts", [])
+            for s in self.sentencizer.segment(e)
+        ]
 
         extracted_excerpts: List[Entity] = []
-        for locs in grouped_locs:
-            if len(locs) == 0:
-                # nothing matched for this group
+        for ex_text in excerpts:
+            # we need to find the sentence in the document that matches
+            # the excerpt returned by the LLM.
+            matched_ex = [i for i, s in enumerate(sents_text) if ex_text in s]
+            if not matched_ex:
+                # could not match the excerpt returned by the LLM to a sentence
+                # in the document.
                 continue
 
-            ids = [sentences_ids[loc] for loc in locs]
-            sents = [doc.paragraphs[i].sentences[j] for i, j in ids]  # type: ignore
-            for sent in sents:
-                matched_sent = Entity.from_json(sent.to_json())
-                matched_sent.metadata.score = np.max(similarities[:, locs]).tolist()
-                matched_sent.metadata.answer = parsed_output["answer"]
-                extracted_excerpts.append(matched_sent)
+            # get the location of the matched sentence in the document
+            par_id, sent_id = sents_ids[matched_ex[0]]
+            matched_sent = doc.paragraphs[par_id].sentences[sent_id]
 
+            # we create a new entity that is a copy of the matched sentence
+            # plus the answer generated by the LLM.
+            new_sent_to_return = Entity.from_json(matched_sent.to_json())
+            new_sent_to_return.metadata.answer = answer
+            extracted_excerpts.append(new_sent_to_return)
+
+        # return the list of sentences that support the answer;
+        # each one will have the generated answer included in the metadata.
         return extracted_excerpts
