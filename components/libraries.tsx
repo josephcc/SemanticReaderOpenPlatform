@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect, CSSProperties } from 'react'
 import Image from 'next/image'
-import PaperMage from '@/public/images/PaperMage.jpg'
+import PaperMage from '@/public/images/PaperMage.svg'
 import PaperCraft from '@/public/images/PaperCraft.svg'
 import Github from '@/public/images/github.svg'
 import ArXiv from '@/public/images/arxiv.svg'
@@ -146,8 +146,8 @@ export default function Libraries() {
             {/* Content */}
             <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6 md:mt-6" data-aos="fade-right">
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
-                <h3 className="h3 mb-3" style={{ display: 'flex', alignItems: 'flex-start'   }}>
-                  <Image src={PaperMage} alt="PaperMage Logo" style={{ height: '38px !important', width: 'auto', marginRight: '8px' }} height='40' />
+                <h3 className="h3 mb-3" style={{ display: 'flex', alignItems: 'flex-end'   }}>
+                  <Image src={PaperMage} alt="PaperMage Logo" style={{ height: '44px !important', width: 'auto', marginRight: '8px' }} height='40' />
                   PaperMage
                 </h3>
                 {/* <p className="text-xl text-gray-600">
@@ -170,7 +170,7 @@ export default function Libraries() {
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0">
                     <Image src={Github} alt="Github Logo" style={{ height: '32px !important', width: 'auto' }} />
                   </div>
-                  <div className="font-bold tracking-tight" style={{ marginLeft: '16px' }}>Source Code + Tutorial</div>
+                  <div className="font-bold tracking-tight" style={{ marginLeft: '16px' }}>Source Code</div>
                 </a>
                 <a
                   className='relative inline-block flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
@@ -189,8 +189,8 @@ export default function Libraries() {
 
             <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6 md:mt-6" data-aos="fade-right">
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
-                <h3 className="h3 mb-3" style={{ display: 'flex', alignItems: 'flex-start' }}>
-                  <Image src={PaperCraft} alt="PaperCraft Logo" style={{ height: '38px !important', width: 'auto', marginRight: '8px' }} />
+                <h3 className="h3 mb-3" style={{ display: 'flex', alignItems: 'flex-end' }}>
+                  <Image src={PaperCraft} alt="PaperCraft Logo" style={{ height: '44px !important', width: 'auto', marginRight: '8px' }} />
                   PaperCraft
                 </h3>
                 <p className="text-xl text-gray-600">
