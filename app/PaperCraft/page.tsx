@@ -1,41 +1,8 @@
-import path from "path";
-import fs from 'fs';
-
-// import dynamic from "next/dynamic";
-import Markdown, { Components } from 'react-markdown'
-import remarkGfm from 'remark-gfm'
-
-import Paper from "@/components/paper";
-import { fetchPapers } from "@/components/papers";
-
 import Image from 'next/image'
 import Github from '@/public/images/github.svg'
 import SemanticReader from '@/public/images/semantic_reader_logo.svg'
-
-const markdownHDowngrade: Partial<Components> = {
-  h1(props) { return (<h3 {...props} />) },
-  h2(props) { return (<h4 {...props} />) },
-  h3(props) { return (<h5 {...props} />) },
-  h4(props) { return (<h6 {...props} />) },
-  h5(props) { return (<h6 {...props} />) },
-  table(props) {
-    return (
-      <table {...props} style={{ fontSize: '0.8em' }} />
-
-    )
-  },
-  code(props) {
-    return (
-      <code {...props} style={{ fontSize: '0.8em', whiteSpace: 'pre-wrap', padding: '0 4px' }} />
-
-    )
-  },
-  pre(props) {
-    return (
-      <pre {...props} style={{ background: '#28264b', lineHeight: 1.25, padding: '8px' }} />
-    )
-  }
-}
+import Tutorial from "./tutorial";
+import Link from 'next/link';
 
 
 export const metadata = {
@@ -44,9 +11,6 @@ export const metadata = {
 }
 
 export default async function Home() {
-  const tutorialFp = path.join('app', 'PaperCraft', 'tutorial.md')
-  // read from file and remove first heading
-  const tutorialMd = (await fs.promises.readFile(tutorialFp, 'utf8')).trim().replace(/#[\w\W]+?\n+?/, "")
 
   return (
     <div style={{ paddingTop: '100px' }}>
@@ -88,6 +52,7 @@ export default async function Home() {
                       </span>
                       <span className="font-bold tracking-tight" style={{ marginLeft: '16px' }}>Source Code</span>
                     </a>
+                    <br/>
                     <a
                       style={{ flexShrink: 1 }}
                       className='inline-flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
@@ -99,16 +64,25 @@ export default async function Home() {
                       </span>
                       <span className="font-bold tracking-tight" style={{ margin: '0 16px' }}>Try Semantic Reader</span>
                     </a>
+                    <br/>
+                    <Link
+                      style={{ flexShrink: 1 }}
+                      className='inline-flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
+                      href="/PaperPlain"
+                    >
+                      <span className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0 ml-3">
+                        <Image src={SemanticReader} alt="arXiv Logo" style={{ height: '22px !important', width: 'auto' }} />
+                      </span>
+                      <span className="font-bold tracking-tight" style={{ margin: '0 16px' }}>Additional tutorial for building Paper Plain with PaperCraft</span>
+                    </Link>
                   </p>
                 </div>
 
                 <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
                   <h3 className="h3 mb-3 mt-8" style={{ display: 'flex' }}>
-                    Tutorial
+                    Readme
                   </h3>
-                  <article className="prose lg:prose-xl">
-                    <Markdown remarkPlugins={[remarkGfm]} components={markdownHDowngrade}>{tutorialMd}</Markdown>
-                  </article>
+                  <Tutorial />
                 </div>
 
               </div>
