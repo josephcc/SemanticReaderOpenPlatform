@@ -3,6 +3,7 @@ import { LuTwitter } from "react-icons/lu";
 
 export interface PersonType {
   name: string
+  correspondance?: boolean
   image?: string
   title: string
   affiliation: string
@@ -11,11 +12,11 @@ export interface PersonType {
 }
 
 export default function Person(props: PersonType) {
-  const { name, image, affiliation, website, twitter, title } = props
+  const { name, image, affiliation, website, twitter, title, correspondance = false } = props
   return (
     <div style={{textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
       <img className='shadow-lg' src={image ?? 'https://cataas.com/cat'} alt={`Photo of ${name}`} style={{ borderRadius: '100%', marginBottom: '12px', width: '150px', height: '150px' }} width='150' height='150' data-aos="zoom-y-out" data-aos-delay="300" />
-      <div style={{ fontWeight: 'bold', marginBottom: '6px' }}>{name}</div>
+      <div style={{ fontWeight: 'bold', marginBottom: '6px' }}>{name}{correspondance ? <sup className='text-blue-500'>†</sup> : ''}</div>
       <div style={{ height: '72px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignContent: 'center' }}>
         <div>{title}</div>
         <div style={{ marginBottom: '6px' }}>{affiliation}</div>

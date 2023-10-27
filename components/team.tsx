@@ -14,15 +14,16 @@ export default function Team() {
           {/* Section header */}
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="h2 mb-4">Core Team</h2>
-            <p className="text-xl text-gray-600">See the&nbsp;
+            <p className="text-l text-gray-600">See the&nbsp;
               <Link href="#publications" aria-label="Publications">
                 <span style={{ textDecoration: 'underline' }}>Project Overview Paper</span>
               </Link>
-              &nbsp;to see a full list of contributors.</p>
+              &nbsp;to see a full list of contributors.<br /><sup className='text-blue-500'>†</sup>For questions and inquiries, please contact <a href='https://joe.cat/' target="_blank">Joseph Chee Chang</a> (PaperCraft & Intelligent reading interfaces), or <a href="https://kyleclo.github.io/" target='_blank'>Kyle Lo</a> and <a href='https://soldaini.net/' target='_blank'>Luca Soldaini</a> (PaperMage & Scientific document processing.)
+            </p>
           </div>
+        <Institutions />
         </div>
 
-        <Institutions />
 
         <div>
           <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Research Advisory Board</h4>
@@ -66,6 +67,7 @@ const Mages: PersonType[] = [
   // },
   {
     name: 'Kyle Lo',
+    correspondance: true,
     image: '/images/people/kyle.jpg',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
     website: 'https://kyleclo.github.io/',
@@ -74,6 +76,7 @@ const Mages: PersonType[] = [
   },
   {
     name: 'Luca Soldaini',
+    correspondance: true,
     title: 'Research Scientist',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
     image: '/images/people/luca.jpg',
@@ -199,6 +202,7 @@ const PlatformPeople: PersonType[] = [
 const InterfacePeople: PersonType[] = [
   {
     name: 'Joseph Chee Chang',
+    correspondance: true,
     image: '/images/people/joseph.jpg',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
     website: 'https://joe.cat',
