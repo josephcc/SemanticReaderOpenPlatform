@@ -18,7 +18,7 @@ export default function Team() {
               <Link href="#publications" aria-label="Publications">
                 <span style={{ textDecoration: 'underline' }}>Project Overview Paper</span>
               </Link>
-              &nbsp;to see a full list of contributors.<br /><sup className='text-blue-500'>†</sup>For questions and inquiries, please contact <a href='https://joe.cat/' target="_blank">Joseph Chee Chang</a> (PaperCraft & Intelligent reading interfaces), or <a href="https://kyleclo.github.io/" target='_blank'>Kyle Lo</a> and <a href='https://soldaini.net/' target='_blank'>Luca Soldaini</a> (PaperMage & Scientific document processing.)
+              &nbsp;to see a full list of contributors.<br /><sup className='text-blue-500'>†</sup>For questions and inquiries, please contact <a href='https://joe.cat/' target="_blank">Joseph Chee Chang</a> (PaperCraft & Intelligent reading interfaces), or <a href="https://kyleclo.github.io/" target='_blank'>Kyle Lo</a> and <a href='https://soldaini.net/' target='_blank'>Luca Soldaini</a> (PaperMage & Scientific document processing).
             </p>
           </div>
         <Institutions />
@@ -27,15 +27,15 @@ export default function Team() {
 
         <div>
           <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Research Advisory Board</h4>
-          <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
+          <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-2 items-start md:max-w-2xl lg:max-w-none">
             <PersonShuffleList people={AdvisorPeople} />
           </div>
           <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Intelligent Reading Interfaces Research</h4>
-          <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-4 items-start md:max-w-2xl lg:max-w-none">
+          <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-5 items-start md:max-w-2xl lg:max-w-none">
             <PersonShuffleList people={InterfacePeople} />
           </div>
           <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Scientific Document Processing Research</h4>
-          <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-4 items-start md:max-w-2xl lg:max-w-none">
+          <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-5 items-start md:max-w-2xl lg:max-w-none">
             <PersonShuffleList people={Mages} />
           </div>
           <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Research Libraries and Tooling</h4>
@@ -50,7 +50,7 @@ export default function Team() {
 
 const Mages: PersonType[] = [
   {
-    name: 'Dongyeop Kang (DK)',
+    name: 'Dongyeop Kang',
     image: '/images/people/dk.jpeg',
     affiliation: 'University of Minnesota',
     website: 'https://dykang.github.io/',
@@ -86,10 +86,18 @@ const Mages: PersonType[] = [
   {
     name: 'Shannon Shen',
     image: '/images/people/shannon.jpg',
-    affiliation: 'Massachusetts Institute of Technology',
+    affiliation: 'MIT',
     title: 'Doctoral Student',
     website: 'https://www.szj.io/',
     twitter: 'https://twitter.com/shannonzshen'
+  },
+  {
+    name: 'Doug Downey',
+    affiliation: 'Allen Institute for AI, Semantic Scholar',
+    image: '/images/people/doug.jpg',
+    title: 'Senior Director',
+    website: 'https://users.cs.northwestern.edu/~ddowney/',
+    twitter: 'https://twitter.com/_DougDowney'
   },
 ]
 
@@ -201,7 +209,7 @@ const PlatformPeople: PersonType[] = [
 
 const InterfacePeople: PersonType[] = [
   {
-    name: 'Joseph Chee Chang',
+    name: 'Joseph Chang',
     correspondance: true,
     image: '/images/people/joseph.jpg',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
@@ -226,6 +234,22 @@ const InterfacePeople: PersonType[] = [
     twitter: 'https://twitter.com/drewmikehead'
   },
   {
+    name: 'Lucy Lu Wang',
+    image: '/images/people/lucy.jpeg',
+    affiliation: 'University of Washington',
+    title: 'Assistant Professor',
+    website: 'https://llwang.net/',
+    twitter: 'https://twitter.com/lucyluwang'
+  },
+  {
+    name: 'Aniket Kittur',
+    image: '/images/people/niki.jpeg',
+    affiliation: 'Carnegie Mellon University',
+    title: 'Professor',
+    website: 'https://www.kittur.org/',
+    twitter: 'https://twitter.com/nkittur'
+  },
+  {
     name: 'Amy X. Zhang',
     image: '/images/people/amy.jpg',
     affiliation: 'University of Washington',
@@ -235,7 +259,7 @@ const InterfacePeople: PersonType[] = [
   },
   {
     name: 'Tal August',
-    affiliation: 'University of Illinois at Urbana-Champaign',
+    affiliation: 'UIUC',
     title: 'Assistant Professor',
     image: '/images/people/tal.jpg',
     website: 'https://talaugust.github.io/',
@@ -268,14 +292,6 @@ const InterfacePeople: PersonType[] = [
 
 const AdvisorPeople: PersonType[] = [
   {
-    name: 'Doug Downey',
-    affiliation: 'Allen Institute for AI, Semantic Scholar',
-    image: '/images/people/doug.jpg',
-    title: 'Senior Director',
-    website: 'https://users.cs.northwestern.edu/~ddowney/',
-    twitter: 'https://twitter.com/_DougDowney'
-  },
-  {
     name: 'Marti A. Hearst',
     image: '/images/people/marti.jpg',
     affiliation: 'University of California, Berkeley',
@@ -283,10 +299,10 @@ const AdvisorPeople: PersonType[] = [
     website: 'https://people.ischool.berkeley.edu/~hearst/',
   },
   {
-    name: 'Dan Weld',
+    name: 'Daniel S. Weld',
     affiliation: 'Allen Institute for AI, Semantic Scholar',
     image: '/images/people/dan.jpg',
-    title: 'Chief Scientist',
+    title: 'Chief Scientist and General Manager',
     website: 'https://www.cs.washington.edu/people/faculty/weld',
     twitter: 'https://twitter.com/dsweld'
   },

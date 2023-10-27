@@ -5,6 +5,7 @@ import UW from '@/public/images/institutes/uw.png'
 import Berkeley from '@/public/images/institutes/berkeley.png'
 import UPenn from '@/public/images/institutes/upenn.png'
 import MIT from '@/public/images/institutes/mit.png'
+import CMU from '@/public/images/institutes/cmu.svg'
 import UIUC from '@/public/images/institutes/uiuc.png'
 import Minnesota from '@/public/images/institutes/minnesota.png'
 
@@ -43,6 +44,10 @@ export default function Institutions() {
 
       <div className={itemClassName}>
         <Image src={UIUC} alt="UIUC Logo" height="40" />
+      </div>
+
+      <div className={itemClassName}>
+        <Image src={CMU} alt="Minnesota Logo" height="40" />
       </div>
 
       <div className={itemClassName}>
