@@ -7,6 +7,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      dropShadow: {
+        rainbow: [
+          '0px 0px 5px #FF4F6D', 
+          '0px 0px 5px #E863DA',  
+          '0px 0px 5px #DD99FF',  
+          '0px 0px 5px #AD97E8',  
+          '0px 0px 5px #A6B0FF',  
+        ]
+      },
       colors: {
         gray: {
           100: '#FBFBFB',

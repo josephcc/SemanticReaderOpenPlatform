@@ -18,6 +18,8 @@ export const codeStyle: CSSProperties = {
   border: '1px solid #eee',
 }
 
+const magic = 'hover:drop-shadow-rainbow animation-all duration-500 hover:delay-[5000ms]'
+
 const paperMageCode = `from papermage.recipes import CoreRecipe
 
 recipe = CoreRecipe()
@@ -147,7 +149,7 @@ export default function Libraries() {
             <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6 md:mt-6" data-aos="fade-right">
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
                 <h3 className="h3 mb-3" style={{ display: 'flex', alignItems: 'flex-end'   }}>
-                  <Image src={PaperMage} alt="PaperMage Logo" style={{ height: '44px !important', width: 'auto', marginRight: '8px' }} height='44' />
+                  <Image src={PaperMage} alt="PaperMage Logo" style={{ height: '44px !important', width: 'auto', marginRight: '8px' }} height='44' className={magic} />
                   {/* <Image src={PaperMage} alt="PaperMage Logo" style={{ height: '44px !important', width: 'auto', marginRight: '8px' }} height='44' className='hover:drop-shadow-[0px_0px_30px_#ac65ff] transition-all duration-1000'/> */}
                   PaperMage
                 </h3>
@@ -191,7 +193,7 @@ export default function Libraries() {
             <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6 md:mt-6" data-aos="fade-right">
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
                 <h3 className="h3 mb-3" style={{ display: 'flex', alignItems: 'flex-end' }}>
-                  <Image src={PaperCraft} alt="PaperCraft Logo" style={{ height: '44px !important', width: 'auto', marginRight: '8px' }} />
+                  <Image src={PaperCraft} alt="PaperCraft Logo" style={{ height: '44px !important', width: 'auto', marginRight: '8px' }} className={magic}/>
                   PaperCraft
                 </h3>
                 <p className="text-xl text-gray-600">
