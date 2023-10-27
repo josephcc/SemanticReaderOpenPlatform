@@ -1,12 +1,5 @@
-import Image from 'next/image'
 import Link from 'next/link'
 
-import AI2 from '@/public/images/institutes/ai2.png'
-import UW from '@/public/images/institutes/uw.png'
-import Berkeley from '@/public/images/institutes/berkeley.png'
-import UPenn from '@/public/images/institutes/upenn.png'
-import MIT from '@/public/images/institutes/mit.png'
-import UIUC from '@/public/images/institutes/uiuc.png'
 import { PersonType } from './person'
 import PersonShuffleList from './personShuffleList'
 import Institutions from './institutions'
@@ -36,13 +29,13 @@ export default function Team() {
           <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
             <PersonShuffleList people={AdvisorPeople} />
           </div>
-          <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Scientific Document Processing Research</h4>
-          <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-4 items-start md:max-w-2xl lg:max-w-none">
-            <PersonShuffleList people={Mages} />
-          </div>
           <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Intelligent Reading Interfaces Research</h4>
           <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-4 items-start md:max-w-2xl lg:max-w-none">
             <PersonShuffleList people={InterfacePeople} />
+          </div>
+          <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Scientific Document Processing Research</h4>
+          <div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-4 items-start md:max-w-2xl lg:max-w-none">
+            <PersonShuffleList people={Mages} />
           </div>
           <h4 className="h4 mb-2 mt-8" style={{textAlign: 'center'}}>Research Libraries and Tooling</h4>
           <div className="max-w-sm mx-auto grid md:grid-cols-2 lg:grid-cols-5 items-start md:max-w-2xl lg:max-w-none">
@@ -56,13 +49,21 @@ export default function Team() {
 
 const Mages: PersonType[] = [
   {
-    name: 'Joseph Chee Chang',
-    image: '/images/people/joseph.jpg',
-    affiliation: 'Allen Institute for AI, Semantic Scholar',
-    website: 'https://joe.cat',
-    twitter: 'https://twitter.com/josephcc',
-    title: 'Research Scientist'
+    name: 'Dongyeop Kang (DK)',
+    image: '/images/people/dk.jpeg',
+    affiliation: 'University of Minnesota',
+    website: 'https://dykang.github.io/',
+    twitter: 'https://twitter.com/dongyeopkang',
+    title: 'Assistant Professor'
   },
+  // {
+  //   name: 'Joseph Chee Chang',
+  //   image: '/images/people/joseph.jpg',
+  //   affiliation: 'Allen Institute for AI, Semantic Scholar',
+  //   website: 'https://joe.cat',
+  //   twitter: 'https://twitter.com/josephcc',
+  //   title: 'Research Scientist'
+  // },
   {
     name: 'Kyle Lo',
     image: '/images/people/kyle.jpg',

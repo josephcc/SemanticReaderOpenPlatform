@@ -147,7 +147,8 @@ export default function Libraries() {
             <div className="max-w-xl md:max-w-none md:w-full mx-auto md:col-span-6 lg:col-span-6 md:mt-6" data-aos="fade-right">
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
                 <h3 className="h3 mb-3" style={{ display: 'flex', alignItems: 'flex-end'   }}>
-                  <Image src={PaperMage} alt="PaperMage Logo" style={{ height: '44px !important', width: 'auto', marginRight: '8px' }} height='40' />
+                  <Image src={PaperMage} alt="PaperMage Logo" style={{ height: '44px !important', width: 'auto', marginRight: '8px' }} height='44' />
+                  {/* <Image src={PaperMage} alt="PaperMage Logo" style={{ height: '44px !important', width: 'auto', marginRight: '8px' }} height='44' className='hover:drop-shadow-[0px_0px_30px_#ac65ff] transition-all duration-1000'/> */}
                   PaperMage
                 </h3>
                 {/* <p className="text-xl text-gray-600">
