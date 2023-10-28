@@ -47,11 +47,21 @@ export default async function Home() {
 
                 <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
                   <h3 className="h3 mb-3 mt-8" style={{ display: 'flex' }}>
-                    Demo Videos
+                    Synergi Demo Video
                   </h3>
                   <p className="text-xl text-gray-600">
                   
                     <iframe width="840" height="473" src="https://www.youtube.com/embed/sCZrZqB6-hg?si=Wfq_cpz2T5r62REP" title="YouTube video player" style={{ boxShadow: 'gray 0px 0px 10px 0px', marginTop: '12px' }} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+                  </p>
+                </div>
+
+                <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-4">
+                  <h3 className="h3 mb-3 mt-8" style={{ display: 'flex' }}>
+                    Threddy Demo Video
+                  </h3>
+                  <p className="text-xl text-gray-600">
+                  
+                    <iframe width="840" height="473" src="https://www.youtube.com/embed/7t2G9tNwgTw?si=nrQdVfCB9vn7rfOs" title="YouTube video player" style={{ boxShadow: 'gray 0px 0px 10px 0px', marginTop: '12px' }} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                   </p>
                 </div>
 
