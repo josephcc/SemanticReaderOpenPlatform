@@ -50,7 +50,8 @@ export default async function Home() {
                     Demo Videos
                   </h3>
                   <p className="text-xl text-gray-600">
-                    coming soon...
+                  
+                    <iframe width="840" height="473" src="https://www.youtube.com/embed/sCZrZqB6-hg?si=Wfq_cpz2T5r62REP" title="YouTube video player" style={{ boxShadow: 'gray 0px 0px 10px 0px', marginTop: '12px' }} allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                   </p>
                 </div>
 
