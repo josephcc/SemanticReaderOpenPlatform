@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 import Link from 'next/link'
 import Image from 'next/image'
@@ -30,12 +30,12 @@ export default function Header() {
 
           {/* Site branding */}
           <div className="shrink-0 mr-4">
-            <Link href="/" className="block" aria-label="Home">
+            <a href="/" className="block" aria-label="Home">
               <div style={{ display: 'flex', alignItems: 'center' }}>
                 <Image src={SemanticReader} alt="Hero image" height="32" />
                 <span style={{fontWeight: 'bold', color: 'gray', fontSize: '0.78em', marginLeft: '8px', position: 'relative', top: '1px'}}>Open Research Platform</span>
               </div>
-            </Link>
+            </a>
           </div>
 
           {/* Desktop navigation */}
