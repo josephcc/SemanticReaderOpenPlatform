@@ -35,7 +35,7 @@ export default function Demos() {
 
             <div className="relative inline-block">
               <Demo title="Paper Plain" subtitle="Making Medical Research Papers Approachable to Healthcare Consumers" pillTypes={[PillType.DEMO, PillType.SNIPPET, PillType.PAPER]} people={[{name: 'Tal August', image: '/images/people/tal.jpg'}]} page='/PaperPlain' />
-              <span style={{ fontSize: '0.65' }} className="absolute -top-2 -left-2 inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-600 ring-1 ring-inset ring-red-500/10 mr-1">NEW: CHI 2024</span>
+              <span style={{ fontSize: '0.65' }} className="absolute -top-2 -left-2 inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-600 ring-1 ring-inset ring-red-500/10 mr-1">NEW: TOCHI'22 -> CHI'24</span>
             </div>
 
 
