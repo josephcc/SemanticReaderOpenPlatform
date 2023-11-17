@@ -27,8 +27,9 @@ export interface PaperType {
 }
 
 const overviewId = [257766269]
-const systemIds = [261276997, 260899915, 256868353, 247585131, 248420091, 254591867, 252004841, 222066998, 247187606, 251402552,256846632,239011922]
-const resourceIds = [256194545, 215416146, 216867622, 215768677, 222291111, 245704273]
+const systemIds = [263835343, 261276997, 260899915, 256868353, 247585131, 248420091, 254591867, 252004841, 222066998, 247187606, 251402552,256846632,239011922]
+const resourceIds = [258865865, 256416131, 259064127, 256194545, 222291111, 245704273]
+//const resourceIds = [256416131, 259064127, 256194545, 215416146, 216867622, 215768677, 222291111, 245704273]
 
 export async function fetchPapers(ids: number[]) {
   const key = process.env.S2_PARTNER_KEY || ''
@@ -49,6 +50,11 @@ export default async function Papers() {
   const overviews = await fetchPapers(overviewId);
   const systems = await fetchPapers(systemIds);
   const resources = await fetchPapers(resourceIds);
+  const authors = new Set();
+  overviews.forEach(paper => paper.authors.forEach(author => authors.add(author.authorId)))
+  systems.forEach(paper => paper.authors.forEach(author => authors.add(author.authorId)))
+  resources.forEach(paper => paper.authors.forEach(author => authors.add(author.authorId)))
+  console.log('AUTHORS', authors.size)
   return (
     <section className="relative">
 
