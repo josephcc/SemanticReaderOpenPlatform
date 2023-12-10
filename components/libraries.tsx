@@ -167,24 +167,35 @@ export default function Libraries() {
               <div className="md:pr-4 lg:pr-12 xl:pr-16 mb-8" style={{ display: 'flex' }}>
                 <a
                   className='flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
+                  href="https://papermage.org/"
+                  target='_blank' rel='noreferrer'
+                  style={{ marginRight: '8px', flexGrow: 1 }}
+                >
+                  <div className="flex justify-center items-center w-8 h-8 flex-shrink-0">
+                    <Image src={PaperMage} alt="PaperMage Logo" style={{ height: '32px !important', width: 'auto' }} />
+                  </div>
+                  <div className="font-bold tracking-tight" style={{ marginLeft: '16px' }}>Demo</div>
+                </a>
+                <a
+                  className='flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
                   href="https://github.com/allenai/papermage/blob/3781ae08a787f1b2e755a9eff69ec029a6749a8c/examples/quick_start_demo.ipynb" style={{ marginRight: '8px', flexGrow: 1 }}
                   target='_blank' rel='noreferrer'
                 >
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0">
                     <Image src={Github} alt="Github Logo" style={{ height: '32px !important', width: 'auto' }} />
                   </div>
-                  <div className="font-bold tracking-tight" style={{ marginLeft: '16px' }}>Source Code</div>
+                  <div className="font-bold tracking-tight" style={{ marginLeft: '16px' }}>Code</div>
                 </a>
                 <a
                   className='relative inline-block flex items-center text-lg p-3 rounded border transition duration-300 ease-in-out mb-3 bg-white shadow-md border-gray-200 hover:shadow-lg text-gray-600'
-                  href="https://github.com/allenai/papermage/blob/3781ae08a787f1b2e755a9eff69ec029a6749a8c/tests/fixtures/papermage.pdf"
+                  href="https://aclanthology.org/2023.emnlp-demo.45.pdf"
                   style={{ flexGrow: 1 }}
                   target='_blank' rel='noreferrer'
                 >
                   <div className="flex justify-center items-center w-8 h-8 bg-white rounded-full shadow flex-shrink-0">
                     <Image src={ArXiv} alt="arXiv Logo" style={{ height: '22px !important', width: 'auto' }} />
                   </div>
-                  <div className="font-bold tracking-tight" style={{ marginLeft: '16px' }}>Read the Preprint</div>
+                  <div className="font-bold tracking-tight" style={{ marginLeft: '16px' }}>Paper</div>
                   <span style={{ fontSize: '0.65' }} className="absolute -top-2 -left-2 inline-flex items-center rounded-md bg-red-50 px-2 py-1 text-xs font-medium text-red-600 ring-1 ring-inset ring-red-500/10 mr-1">NEW: EMNLP 2023</span>
                 </a>
               </div>
