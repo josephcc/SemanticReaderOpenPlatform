@@ -6,7 +6,6 @@ import { Inter } from 'next/font/google'
 
 import Header from '@/components/ui/header'
 import Banner from '@/components/banner'
-import Head from 'next/head';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -26,9 +25,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className='scroll-smooth'>
-      <Head>
-        <meta name="google-site-verification" content="luA1PTxwG2ELOY4tBYHyo4AveqbkNZQhMckUC8-_-m8" />
-      </Head>
       <body className={`${inter.variable} scroll-smooth font-inter antialiased bg-white text-gray-900 tracking-tight`}>
         <div className="flex scroll-smooth flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
           <Header />
