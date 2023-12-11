@@ -104,6 +104,7 @@ export default async function Papers() {
               <li className="flex justify-between gap-x-6 py-2">
                 <p className="text-s text-gray-600">
                   <span style={{ display: 'inline-block' }}>
+                    <span style={{ fontWeight: 'bold' }}>🏆 Best Paper Award<br /></span>
                       <a href={'https://github.com/allenai/papermage/blob/3781ae08a787f1b2e755a9eff69ec029a6749a8c/tests/fixtures/papermage.pdf'} target="_blank" style={{ fontWeight: 600 }}>
                     PaperMage: A Unified Toolkit for Processing, Representing, and Manipulating Visually-Rich Scientific Documents</a><br/>Kyle Lo, Zejiang Shen, Benjamin Newman, Joseph Chee Chang, Russell Authur, Erin Bransom, Stefan Candra, Yoganand Chandrasekhar, Regan Huff, Bailey Kuehl, Amanpreet Singh, Chris Wilhelm, Angele Zamarron, Marti A. Hearst, Daniel S. Weld, Doug Downey, Luca Soldaini. Conference on Empirical Methods in Natural Language Processing: Demos. 2023.
                   </span>
