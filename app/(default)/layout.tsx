@@ -6,6 +6,7 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 import Footer from '@/components/ui/footer'
+import Head from 'next/head'
 
 export default function DefaultLayout({
   children,
@@ -24,6 +25,9 @@ export default function DefaultLayout({
 
   return (
     <>
+    <Head>
+        <meta name="google-site-verification" content="luA1PTxwG2ELOY4tBYHyo4AveqbkNZQhMckUC8-_-m8" />
+    </Head>
       <main className="grow">
 
         {children}

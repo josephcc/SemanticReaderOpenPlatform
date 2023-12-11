@@ -8,10 +8,15 @@ import Libraries from '@/components/libraries'
 import Demos from '@/components/demos'
 import Papers from '@/components/papers'
 import Team from '@/components/team'
+import Head from 'next/head'
 
 export default function Home() {
   return (
     <>
+    <Head>
+        <meta name="google-site-verification" content="luA1PTxwG2ELOY4tBYHyo4AveqbkNZQhMckUC8-_-m8" />
+    </Head>
+
       <Hero />
       <div id='libraries' style={{position: 'relative', top: '-60px'}}/>
       <Libraries />
